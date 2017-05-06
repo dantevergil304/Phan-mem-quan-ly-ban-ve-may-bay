@@ -17,8 +17,7 @@ namespace Presentation
     {
         private TracuuBUS tracuuBUS;
         private DataTable DanhSachSanBayDi;
-        private DataTable DanhSachSanBayDen;
-        public Form RefToHome { get; set; }
+        private DataTable DanhSachSanBayDen;        
         public TraCuu()
         {
             InitializeComponent();
@@ -33,12 +32,28 @@ namespace Presentation
             SBDENBox.DataSource = DanhSachSanBayDen;
             SBDENBox.DisplayMember = "TENSANBAY";
             SBDENBox.ValueMember = "MASANBAY";
+            DataGridViewTextBoxColumn stt = new DataGridViewTextBoxColumn();
+            stt.ValueType = typeof(Int32);
+            stt.HeaderText = "STT";
+            dataGridView1.Columns.Add(stt);
+            
         }      
-        private void QUAYLAIButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.RefToHome.Show();
-        }       
+
+        private void setHeaderOfColumnWithDataSource(DataTable table){
+            dataGridView1.DataSource = table;
+            dataGridView1.Columns[1].HeaderText = "Mã chuyến bay";
+            dataGridView1.Columns[2].HeaderText = "Sân bay đi";
+            dataGridView1.Columns[3].HeaderText = "Sân bay đến";
+            dataGridView1.Columns[4].HeaderText = "Ngày khởi hành";
+            dataGridView1.Columns[5].HeaderText = "Thời gian bay";
+            dataGridView1.Columns[6].HeaderText = "Số ghế trống";
+            dataGridView1.Columns[7].HeaderText = "Số ghế đã đặt";
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+        
         private string validation()
         {
             StringBuilder warning = new StringBuilder();
@@ -58,32 +73,21 @@ namespace Presentation
                 MessageBox.Show(warning);
             else
             {
-                TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string);
-                dataGridView1.DataSource = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay);
-                if (dataGridView1.RowCount == 1)
-                    label5.Visible = true;
+                TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string, NGBAYDate.Value);
+                DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay);
+                if (table.Rows.Count == 0)
+                {                                        
+                    label5.Visible = true;                    
+                }
                 else
+                {                    
+                     
+                    //dataGridView1.DataSource = table;
                     label5.Visible = false;
+                    setHeaderOfColumnWithDataSource(table);                    
+                }
             }
-        }
-
-        private void XemChiTietButton_MouseHover(object sender, EventArgs e)
-        {
-            XemChiTietButton.BackColor = Color.White;
-            XemChiTietButton.ForeColor = Color.Black;
-        }
-
-        private void QUAYLAIButton_MouseHover(object sender, EventArgs e)
-        {
-            QUAYLAIButton.BackColor = Color.White;
-            QUAYLAIButton.ForeColor = Color.Black;
-        }
-
-        private void QUAYLAIButton_MouseLeave(object sender, EventArgs e)
-        {
-            QUAYLAIButton.BackColor = Color.Magenta;
-            QUAYLAIButton.ForeColor = Color.White;
-        }
+        } 
 
         private void TIMCBButton_MouseHover(object sender, EventArgs e)
         {
@@ -97,8 +101,8 @@ namespace Presentation
 
         private void XemTatCaButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = tracuuBUS.LayThongTinTatCaChuyenBay();
             
-        }          
+            setHeaderOfColumnWithDataSource(tracuuBUS.LayThongTinTatCaChuyenBay());            
+        }        
     }
 }

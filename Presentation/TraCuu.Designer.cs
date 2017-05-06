@@ -37,10 +37,9 @@
             this.NGBAYDate = new System.Windows.Forms.DateTimePicker();
             this.TIMCBButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.QUAYLAIButton = new System.Windows.Forms.Button();
-            this.XemChiTietButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.XemTatCaButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,8 +47,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(360, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 33);
             this.label1.TabIndex = 0;
@@ -59,6 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(12, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 24);
@@ -69,7 +69,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 121);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(367, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 24);
             this.label3.TabIndex = 2;
@@ -79,42 +80,45 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 169);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(737, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày bay";
-            this.label4.Visible = false;
             // 
             // SBDIBox
             // 
             this.SBDIBox.FormattingEnabled = true;
-            this.SBDIBox.Location = new System.Drawing.Point(144, 84);
+            this.SBDIBox.Location = new System.Drawing.Point(127, 82);
             this.SBDIBox.Name = "SBDIBox";
-            this.SBDIBox.Size = new System.Drawing.Size(152, 21);
+            this.SBDIBox.Size = new System.Drawing.Size(195, 21);
             this.SBDIBox.TabIndex = 4;
             // 
             // SBDENBox
             // 
             this.SBDENBox.FormattingEnabled = true;
-            this.SBDENBox.Location = new System.Drawing.Point(144, 124);
+            this.SBDENBox.Location = new System.Drawing.Point(506, 82);
             this.SBDENBox.Name = "SBDENBox";
-            this.SBDENBox.Size = new System.Drawing.Size(152, 21);
+            this.SBDENBox.Size = new System.Drawing.Size(195, 21);
             this.SBDENBox.TabIndex = 5;
             // 
             // NGBAYDate
             // 
-            this.NGBAYDate.Location = new System.Drawing.Point(144, 171);
+            this.NGBAYDate.CustomFormat = "dd/MM/yyyy";
+            this.NGBAYDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NGBAYDate.Location = new System.Drawing.Point(849, 81);
             this.NGBAYDate.Name = "NGBAYDate";
-            this.NGBAYDate.Size = new System.Drawing.Size(200, 20);
+            this.NGBAYDate.Size = new System.Drawing.Size(152, 20);
             this.NGBAYDate.TabIndex = 6;
-            this.NGBAYDate.Visible = false;
             // 
             // TIMCBButton
             // 
             this.TIMCBButton.BackColor = System.Drawing.Color.LimeGreen;
-            this.TIMCBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TIMCBButton.Location = new System.Drawing.Point(144, 209);
+            this.TIMCBButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TIMCBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TIMCBButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TIMCBButton.Location = new System.Drawing.Point(435, 143);
             this.TIMCBButton.Name = "TIMCBButton";
             this.TIMCBButton.Size = new System.Drawing.Size(158, 36);
             this.TIMCBButton.TabIndex = 7;
@@ -126,47 +130,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(356, 9);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 285);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(589, 424);
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 149);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // QUAYLAIButton
-            // 
-            this.QUAYLAIButton.BackColor = System.Drawing.Color.Magenta;
-            this.QUAYLAIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QUAYLAIButton.ForeColor = System.Drawing.Color.White;
-            this.QUAYLAIButton.Location = new System.Drawing.Point(200, 451);
-            this.QUAYLAIButton.Name = "QUAYLAIButton";
-            this.QUAYLAIButton.Size = new System.Drawing.Size(102, 35);
-            this.QUAYLAIButton.TabIndex = 9;
-            this.QUAYLAIButton.Text = "Quay lại";
-            this.QUAYLAIButton.UseVisualStyleBackColor = false;
-            this.QUAYLAIButton.Click += new System.EventHandler(this.QUAYLAIButton_Click);
-            this.QUAYLAIButton.MouseLeave += new System.EventHandler(this.QUAYLAIButton_MouseLeave);
-            this.QUAYLAIButton.MouseHover += new System.EventHandler(this.QUAYLAIButton_MouseHover);
-            // 
-            // XemChiTietButton
-            // 
-            this.XemChiTietButton.BackColor = System.Drawing.Color.Magenta;
-            this.XemChiTietButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XemChiTietButton.ForeColor = System.Drawing.Color.White;
-            this.XemChiTietButton.Location = new System.Drawing.Point(12, 451);
-            this.XemChiTietButton.Name = "XemChiTietButton";
-            this.XemChiTietButton.Size = new System.Drawing.Size(168, 35);
-            this.XemChiTietButton.TabIndex = 10;
-            this.XemChiTietButton.Text = "Xem chi tiết chuyến bay";
-            this.XemChiTietButton.UseVisualStyleBackColor = false;
-            this.XemChiTietButton.Visible = false;
-            this.XemChiTietButton.MouseHover += new System.EventHandler(this.XemChiTietButton_MouseHover);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(141, 264);
+            this.label5.Location = new System.Drawing.Point(608, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 16);
             this.label5.TabIndex = 11;
@@ -175,28 +151,38 @@
             // 
             // XemTatCaButton
             // 
-            this.XemTatCaButton.BackColor = System.Drawing.Color.Magenta;
-            this.XemTatCaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XemTatCaButton.BackColor = System.Drawing.Color.Blue;
+            this.XemTatCaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XemTatCaButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XemTatCaButton.ForeColor = System.Drawing.Color.White;
-            this.XemTatCaButton.Location = new System.Drawing.Point(777, 451);
+            this.XemTatCaButton.Location = new System.Drawing.Point(393, 198);
             this.XemTatCaButton.Name = "XemTatCaButton";
-            this.XemTatCaButton.Size = new System.Drawing.Size(168, 35);
+            this.XemTatCaButton.Size = new System.Drawing.Size(245, 35);
             this.XemTatCaButton.TabIndex = 12;
             this.XemTatCaButton.Text = "Xem tất cả chuyến bay";
             this.XemTatCaButton.UseVisualStyleBackColor = false;
             this.XemTatCaButton.Click += new System.EventHandler(this.XemTatCaButton_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Orange;
+            this.label6.Location = new System.Drawing.Point(388, 257);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(270, 25);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "THÔNG TIN CHUYẾN BAY";
+            // 
             // TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(957, 498);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1044, 457);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.XemTatCaButton);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.XemChiTietButton);
-            this.Controls.Add(this.QUAYLAIButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TIMCBButton);
             this.Controls.Add(this.NGBAYDate);
@@ -207,6 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.HelpButton = true;
             this.Name = "TraCuu";
             this.Text = "Tra cứu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -226,9 +213,8 @@
         private System.Windows.Forms.DateTimePicker NGBAYDate;
         private System.Windows.Forms.Button TIMCBButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button QUAYLAIButton;
-        private System.Windows.Forms.Button XemChiTietButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button XemTatCaButton;
+        private System.Windows.Forms.Label label6;
     }
 }

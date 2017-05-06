@@ -10,10 +10,10 @@ namespace BusinessLogicTier
 {
     public class HanhKhachBUS
     {
-        public HanhKhachDAO hanhkhachDAO;
+        public HanhkhachDAO hanhkhachDAO;
         public HanhKhachBUS()
         {
-            hanhkhachDAO = new HanhKhachDAO();
+            hanhkhachDAO = new HanhkhachDAO();
         }
 
         public bool ThemHanhKhach(HanhKhach hanhkhach)

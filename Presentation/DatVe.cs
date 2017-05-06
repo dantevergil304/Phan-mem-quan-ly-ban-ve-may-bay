@@ -16,8 +16,7 @@ namespace Presentation
 {
     public partial class DatVe : Form
     {
-        private Label[] warning;
-        public Form RefToHome { get; set; }
+        private Label[] warning;        
         private DatveBUS datveBUS;
         private HanhKhachBUS hanhkhachBUS;
         public DatVe()
@@ -36,12 +35,7 @@ namespace Presentation
             HVComboBox.DisplayMember = "TENHANGVE";
             HVComboBox.ValueMember = "MAHANGVE";
         }
-
-        private void QuaylaiButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.RefToHome.Show();
-        }
+        
 
         private bool validation()
         {
@@ -130,19 +124,7 @@ namespace Presentation
         {            
                 warning[4].Visible = false;
         }
-
-        private void QuaylaiButton_MouseHover(object sender, EventArgs e)
-        {
-            QuaylaiButton.BackColor = Color.White;
-            QuaylaiButton.ForeColor = Color.Black;
-        }
-
-        private void QuaylaiButton_MouseLeave(object sender, EventArgs e)
-        {
-            QuaylaiButton.BackColor = Color.Magenta;
-            QuaylaiButton.ForeColor = Color.White;
-        }
-
+      
         private void DatveButton_MouseHover(object sender, EventArgs e)
         {
             DatveButton.BackColor = Color.White;

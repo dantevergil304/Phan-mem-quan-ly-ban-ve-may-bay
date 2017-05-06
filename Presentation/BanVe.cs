@@ -12,8 +12,7 @@ namespace Presentation
 {
     public partial class BanVe : Form
     {
-        private Label[] warning;
-        public Form RefToHome { get; set; }
+        private Label[] warning;        
         public BanVe()
         {
             InitializeComponent();
@@ -23,13 +22,7 @@ namespace Presentation
             warning[2] = label13;
             warning[3] = label12;
             warning[4] = label15;
-        }
-
-        private void QuaylaiButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.RefToHome.Show();
-        }
+        }        
         private bool validation()
         {
             bool check = true;
@@ -106,21 +99,7 @@ namespace Presentation
         {
             InveButton.BackColor = Color.Magenta;
             InveButton.ForeColor = Color.White;
-        }
-
-        private void QuaylaiButton_MouseHover(object sender, EventArgs e)
-        {
-            QuaylaiButton.BackColor = Color.White;
-            QuaylaiButton.ForeColor = Color.Black;
-        }
-
-        private void QuaylaiButton_MouseLeave(object sender, EventArgs e)
-        {
-            QuaylaiButton.BackColor = Color.Magenta;
-            QuaylaiButton.ForeColor = Color.White;
-        }
-               
-
+        }       
        
     }
 }

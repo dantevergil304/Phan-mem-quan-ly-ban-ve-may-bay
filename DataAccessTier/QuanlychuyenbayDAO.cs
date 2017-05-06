@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 using System.Data;
 namespace DataAccessTier
 {
-    public class NhapThongTinChuyenBayDAO : DatabaseConnection
+    public class QuanLyChuyenBayDAO : DatabaseConnection
     {
-        public NhapThongTinChuyenBayDAO() : base() { }
+        public QuanLyChuyenBayDAO() : base() { }
 
 
         public void ThemThongTinChuyenBay (ThongTinChuyenBay thongtinchuyenbay, List<ChiTietChuyenBay> chitietchuyenbays)
@@ -111,28 +111,41 @@ namespace DataAccessTier
 
         }
 
-        public void ThemTuyenBay(TuyenBay tuyenbay)
+        public DataTable LayThongTinChuyenBay(string MACB = null)
         {
-            if (!KiemTraKetNoi())
-            {
-                connection.Open();
+            string query = "";
+            Dictionary<string, object> parameters = new Dictionary<string,object>();
+            if (string.IsNullOrWhiteSpace(MACB))
+                query = "";
+            else {
+                query = "";
+                parameters["@"] = MACB; 
             }
-            try
-            {
-                string query = "INSERT INTO TUYENBAY VALUES (@MaTuyenBay,@SanBayDi,@SanBayDen)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaTuyenBay", tuyenbay.MaTuyenBay);
-                command.Parameters.AddWithValue("@SanBayDi", tuyenbay.MaSanBayDi);
-                command.Parameters.AddWithValue("@SanBayDen", tuyenbay.MaSanBayDen);
-                command.ExecuteNonQuery();               
-            }
-            catch (Exception)
-            {                
-            }
-            finally
-            {
-                connection.Close();
-            }
+
+            return ExecuteQuery(query, parameters);
         }
+
+        public DataTable LayThongTinChiTietChuyenBay(string MACB)
+        {
+            string query = "";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters["@MaChuyenBay"] = MACB;
+            return ExecuteQuery(query, parameters);
+        }
+
+        public void XoaChuyenBay(string MACB)
+        {
+            string query = "";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters["@MaChuyenBay"] = MACB;
+            ExecuteNonQuery(query, parameters);
+        }
+        public void CapNhapChuyenBay(ThongTinChuyenBay t)
+        {
+            string query = "";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();         
+            ExecuteNonQuery(query, parameters);
+        }
+        
     }
 }

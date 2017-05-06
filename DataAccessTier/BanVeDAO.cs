@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 
 namespace DataAccessTier
 {
-    public class BanVeDAO : DatabaseConnection
+    public class BanveDAO : DatabaseConnection
     {
-        public BanVeDAO() : base() { }
+        public BanveDAO() : base() { }
 
         private void ThemHanhKhach(HanhKhach hanhkhach)
         {

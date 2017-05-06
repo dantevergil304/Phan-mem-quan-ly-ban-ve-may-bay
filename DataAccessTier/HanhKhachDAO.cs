@@ -8,9 +8,9 @@ using System.Data;
 using System.Data.SqlClient;
 namespace DataAccessTier
 {
-    public class HanhKhachDAO : DatabaseConnection
+    public class HanhkhachDAO : DatabaseConnection
     {
-        public HanhKhachDAO() : base() { }
+        public HanhkhachDAO() : base() { }
 
         public bool KiemTraCMNDHanhKhach(string CMND)
         {

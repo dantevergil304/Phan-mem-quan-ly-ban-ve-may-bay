@@ -22,53 +22,16 @@ namespace Presentation
 
         }
 
-        private void NHAPLICHBox_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            NhapThongTinChuyenBay f = new NhapThongTinChuyenBay();
-            f.RefToHome = this;
-            f.Show();
+            QuanLyChuyenBay f = new QuanLyChuyenBay();
+            f.ShowDialog();
         }
 
-        private void BANVEBox_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            BanVe f = new BanVe();
-            f.RefToHome = this;
-            f.Show();
-        }
-
-        private void DATVEBox_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            DatVe f = new DatVe();
-            f.RefToHome = this;
-            f.Show();
-        }
-
-        private void TRACUUBox_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
             TraCuu f = new TraCuu();
-            f.RefToHome = this;
-            f.Show();
-        }
-
-        private void BAOCAOBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void THAYDOIBoX_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-        
-        
+            f.ShowDialog();
+        }        
     }
 }

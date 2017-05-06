@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using System.Data;
 using DTO;
 using DataAccessTier;
+using BusinessLogicTier;
 using System.Text.RegularExpressions;
 
 namespace BusinessLogicTier
 {
     public class DatveBUS
     {
-        private DatVeDAO datveDAO;
-        private NhapThongTinChuyenBayDAO chuyenbayDAO;
+        private DatveDAO datveDAO;
+        private QuanlychuyenbayBUS chuyenbayDAO;
         private Match match;
 
 
         public DatveBUS()
         {
-            datveDAO = new DatVeDAO();
-            chuyenbayDAO = new NhapThongTinChuyenBayDAO();
+            datveDAO = new DatveDAO();
+            chuyenbayDAO = new QuanlychuyenbayBUS();
         }
 
         public DataTable LayHangVe()
@@ -29,13 +30,7 @@ namespace BusinessLogicTier
         }
 
         public void ThemThongTinDatCho(PhieuDatCho phieu)
-        {
-            if (chuyenbayDAO.KiemTraMaChuyenBay(phieu.MaChuyenBay))
-                datveDAO.ThemThongTinDatCho(phieu);
-            else
-            {
-                           
-            }              
+        {          
             
         }
 

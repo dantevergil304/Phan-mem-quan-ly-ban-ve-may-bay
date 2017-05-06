@@ -10,10 +10,10 @@ namespace BusinessLogicTier
 {
     public class TracuuBUS
     {
-        private TraCuuDAO tracuuDAO;
+        private TracuuDAO tracuuDAO;
         public TracuuBUS()
         {
-            tracuuDAO = new TraCuuDAO();
+            tracuuDAO = new TracuuDAO();
         }
         public DataTable LayDanhSachSanBay()
         {

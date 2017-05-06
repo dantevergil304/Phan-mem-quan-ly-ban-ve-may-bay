@@ -13,8 +13,7 @@ using BusinessLogicTier;
 namespace Presentation
 {
     public partial class NhapThongTinChuyenBay : Form
-    {
-        public Form RefToHome { get; set; }
+    {       
         private Label[] warning;
         public TracuuBUS tracuuBUS;
         public NhapThongTinChuyenBay()
@@ -41,15 +40,9 @@ namespace Presentation
             col.DataSource = tracuuBUS.LayDanhSachSanBay();
             col.DisplayMember = "TENSANBAY";
             col.ValueMember = "MASANBAY";
-        }
-        
+            dataGridView1.Rows[0].Cells[0].Value = "1";            
+        }              
        
-        private void QuayLaiButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.RefToHome.Show();
-        }
-
         private bool validation()
         {
             bool check = true;
@@ -128,20 +121,8 @@ namespace Presentation
             TGBTextBox.Text = "";
             TENSBComboBox1.SelectedIndex = 0;
             TENSBComboBox2.SelectedIndex = 0;
-        }
-
-        private void QuayLaiButton_MouseHover(object sender, EventArgs e)
-        {
-            QuayLaiButton.BackColor = Color.White;
-            QuayLaiButton.ForeColor = Color.Black;
-        }
-
-        private void QuayLaiButton_MouseLeave(object sender, EventArgs e)
-        {
-            QuayLaiButton.BackColor = Color.Magenta;
-            QuayLaiButton.ForeColor = Color.White;
-        }
-
+        } 
+     
         private void LưuButton_MouseHover(object sender, EventArgs e)
         {
             LưuButton.BackColor = Color.White;
@@ -150,7 +131,7 @@ namespace Presentation
 
         private void LưuButton_MouseLeave(object sender, EventArgs e)
         {
-            LưuButton.BackColor = Color.Magenta;
+            LưuButton.BackColor = Color.Blue;
             LưuButton.ForeColor = Color.White;
         }
 
@@ -178,18 +159,14 @@ namespace Presentation
         {
             warning[6].Visible = false;
         }
-
-        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Rows.Count == 3)
-                dataGridView1.AllowUserToAddRows = false;                        
-        }
-              
-
-        
-
        
-
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1);
+            if (dataGridView1.Rows.Count == 3)
+                dataGridView1.AllowUserToAddRows = false;         
+        }
+                                    
         
     }
 }
