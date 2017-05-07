@@ -32,6 +32,18 @@ namespace Presentation
         {
             TraCuu f = new TraCuu();
             f.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BanVeVaDatCho f = new BanVeVaDatCho();
+            f.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ThongKe f = new ThongKe();
+            f.ShowDialog();
         }        
     }
 }

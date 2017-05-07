@@ -54,25 +54,9 @@ namespace Presentation
             }
         }
         
-        private string validation()
-        {
-            StringBuilder warning = new StringBuilder();
-            if (SBDIBox.SelectedIndex == -1)
-                warning.AppendLine("Chưa chọn sân bay đến");
-            if (SBDENBox.SelectedIndex == -1)
-                warning.AppendLine("Chưa chọn sân bay đi");
-            if (SBDIBox.SelectedValue == SBDENBox.SelectedValue && SBDENBox.SelectedIndex != -1 && SBDIBox.SelectedIndex != -1)
-                warning.AppendLine("Sân bay đến và sân bay đi không thể trùng nhau");
-            return warning.ToString(); ;
-        }
 
         private void TIMCBButton_Click(object sender, EventArgs e)
         {
-            string warning = this.validation();
-            if (!string.IsNullOrWhiteSpace(warning))
-                MessageBox.Show(warning);
-            else
-            {
                 TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string, NGBAYDate.Value);
                 DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay);
                 if (table.Rows.Count == 0)
@@ -86,8 +70,7 @@ namespace Presentation
                     label5.Visible = false;
                     setHeaderOfColumnWithDataSource(table);                    
                 }
-            }
-        } 
+        }        
 
         private void TIMCBButton_MouseHover(object sender, EventArgs e)
         {
@@ -103,6 +86,18 @@ namespace Presentation
         {
             
             setHeaderOfColumnWithDataSource(tracuuBUS.LayThongTinTatCaChuyenBay());            
+        }
+
+        private void XemTatCaButton_MouseHover(object sender, EventArgs e)
+        {
+            XemTatCaButton.BackColor = Color.White;
+            XemTatCaButton.ForeColor = Color.Black;
+        }
+
+        private void XemTatCaButton_MouseLeave(object sender, EventArgs e)
+        {
+            XemTatCaButton.BackColor = Color.Blue;
+            XemTatCaButton.ForeColor = Color.White;
         }        
     }
 }

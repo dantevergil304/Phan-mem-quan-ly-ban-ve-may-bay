@@ -42,6 +42,7 @@
     <Compile Include="BanveDAO.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DatveDAO.cs" />
+    <Compile Include="Doanhthu.cs" />
     <Compile Include="HanhkhachDAO.cs" />
     <Compile Include="QuanlychuyenbayDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

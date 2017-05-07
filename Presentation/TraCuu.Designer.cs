@@ -162,6 +162,8 @@
             this.XemTatCaButton.Text = "Xem tất cả chuyến bay";
             this.XemTatCaButton.UseVisualStyleBackColor = false;
             this.XemTatCaButton.Click += new System.EventHandler(this.XemTatCaButton_Click);
+            this.XemTatCaButton.MouseLeave += new System.EventHandler(this.XemTatCaButton_MouseLeave);
+            this.XemTatCaButton.MouseHover += new System.EventHandler(this.XemTatCaButton_MouseHover);
             // 
             // label6
             // 
