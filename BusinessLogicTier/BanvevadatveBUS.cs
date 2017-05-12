@@ -7,20 +7,19 @@ using System.Data;
 using DTO;
 using DataAccessTier;
 using BusinessLogicTier;
-using System.Text.RegularExpressions;
+
 
 namespace BusinessLogicTier
 {
-    public class DatveBUS
+    public class BanvevadatveBUS
     {
-        private DatveDAO datveDAO;
-        private QuanlychuyenbayBUS chuyenbayDAO;
-        private Match match;
+        private BanvevadatveDAO datveDAO;
+        private QuanlychuyenbayBUS chuyenbayDAO;        
 
 
-        public DatveBUS()
+        public BanvevadatveBUS()
         {
-            datveDAO = new DatveDAO();
+            datveDAO = new BanvevadatveDAO();
             chuyenbayDAO = new QuanlychuyenbayBUS();
         }
 
@@ -33,6 +32,7 @@ namespace BusinessLogicTier
         {          
             
         }
+        
 
     }
 }

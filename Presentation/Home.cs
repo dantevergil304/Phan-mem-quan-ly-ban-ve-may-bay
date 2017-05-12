@@ -44,6 +44,12 @@ namespace Presentation
         {
             ThongKe f = new ThongKe();
             f.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            QuanLySanBayVaTuyenBay f = new QuanLySanBayVaTuyenBay();
+            f.ShowDialog();
         }        
     }
 }

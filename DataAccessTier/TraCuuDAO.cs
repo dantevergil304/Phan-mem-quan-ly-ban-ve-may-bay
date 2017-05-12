@@ -22,7 +22,7 @@ namespace DataAccessTier
             return ExecuteQuery(query, parameters);            
         }
 
-        public DataTable LayDanhSachChuyenBayTheoTuyenBay(TuyenBay tuyenbay)
+        public DataTable LayDanhSachChuyenBayTheoTuyenBay(TuyenBay tuyenbay, DateTime date)
         {
             string query = "SELECT CB.MACHUYENBAY,(SELECT TENSANBAY FROM SANBAY WHERE MASANBAY = SANBAYDI) SANBAYDI, (SELECT TENSANBAY FROM SANBAY WHERE MASANBAY = SANBAYDEN) SANBAYDEN, NGAYGIO, THOIGIANBAY, SUM(SOGHETRONG) SOGHETRONG, SUM(SOGHEDAT) SOGHEDAT FROM (	SELECT MACHUYENBAY, MATUYENBAY, NGAYGIO, THOIGIANBAY FROM CHUYENBAY WHERE MATUYENBAY = (	SELECT MATUYENBAY FROM TUYENBAY WHERE	SANBAYDI = @SanBayDi AND		SANBAYDEN = @SanBayDen)) CB, (	SELECT * FROM TUYENBAY WHERE SANBAYDI = @SanBayDi AND SANBAYDEN = @SanBayDen) TB, TINHTRANGVE T WHERE	CB.MACHUYENBAY = T.MACHUYENBAY AND DAY(CB.NGAYGIO) = DAY(@NgayBay) GROUP BY CB.MACHUYENBAY, SANBAYDI, SANBAYDEN, NGAYGIO, THOIGIANBAY";
 
@@ -30,7 +30,7 @@ namespace DataAccessTier
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters["@SanBayDi"] = tuyenbay.MaSanBayDi;
             parameters["@SanBayDen"] = tuyenbay.MaSanBayDen;
-            parameters["@NgayBay"] = tuyenbay.NgayBay;
+            parameters["@NgayBay"] = date;
             return ExecuteQuery(query, parameters);            
         }
 

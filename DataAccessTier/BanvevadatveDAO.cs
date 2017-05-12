@@ -7,9 +7,9 @@ using DTO;
 using System.Data;
 namespace DataAccessTier
 {
-    public class DatveDAO : DatabaseConnection
+    public class BanvevadatveDAO : DatabaseConnection
     {      
-        public DatveDAO() : base() { }
+        public BanvevadatveDAO() : base() { }
         public bool ThemThongTinDatCho(PhieuDatCho phieu)
         {
             string query = "INSERT INTO PHIEUDATCHO VALUES (@MaPhieuDat, @MaChuyenBay, @MaHanhKhach, @MaHangVe, @GiaTien, @NgayDat)";

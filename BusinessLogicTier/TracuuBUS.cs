@@ -24,9 +24,9 @@ namespace BusinessLogicTier
             return tracuuDAO.LayDanhSachSanBayDenTheoSanBayDi(MaSanBayDi);
         }        
 
-        public DataTable LayThongTinChuyenBayTheoTuyenBay(TuyenBay tuyenbay)
+        public DataTable LayThongTinChuyenBayTheoTuyenBay(TuyenBay tuyenbay, DateTime date)
         {
-            return tracuuDAO.LayDanhSachChuyenBayTheoTuyenBay(tuyenbay);
+            return tracuuDAO.LayDanhSachChuyenBayTheoTuyenBay(tuyenbay, date);
         }
 
         public DataTable LayThongTinTatCaChuyenBay()

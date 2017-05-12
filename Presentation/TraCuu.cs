@@ -32,14 +32,15 @@ namespace Presentation
             SBDENBox.DataSource = DanhSachSanBayDen;
             SBDENBox.DisplayMember = "TENSANBAY";
             SBDENBox.ValueMember = "MASANBAY";
+           
+            
+        }      
+
+        private void setDataSourceToDataGridView(DataTable table){
             DataGridViewTextBoxColumn stt = new DataGridViewTextBoxColumn();
             stt.ValueType = typeof(Int32);
             stt.HeaderText = "STT";
             dataGridView1.Columns.Add(stt);
-            
-        }      
-
-        private void setHeaderOfColumnWithDataSource(DataTable table){
             dataGridView1.DataSource = table;
             dataGridView1.Columns[1].HeaderText = "Mã chuyến bay";
             dataGridView1.Columns[2].HeaderText = "Sân bay đi";
@@ -57,18 +58,16 @@ namespace Presentation
 
         private void TIMCBButton_Click(object sender, EventArgs e)
         {
-                TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string, NGBAYDate.Value);
-                DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay);
+                TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string);
+                DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay, NGBAYDate.Value);
                 if (table.Rows.Count == 0)
                 {                                        
                     label5.Visible = true;                    
                 }
                 else
-                {                    
-                     
-                    //dataGridView1.DataSource = table;
+                {                                                            
                     label5.Visible = false;
-                    setHeaderOfColumnWithDataSource(table);                    
+                    setDataSourceToDataGridView(table);                    
                 }
         }        
 
@@ -83,9 +82,8 @@ namespace Presentation
         }
 
         private void XemTatCaButton_Click(object sender, EventArgs e)
-        {
-            
-            setHeaderOfColumnWithDataSource(tracuuBUS.LayThongTinTatCaChuyenBay());            
+        {            
+            setDataSourceToDataGridView(tracuuBUS.LayThongTinTatCaChuyenBay());            
         }
 
         private void XemTatCaButton_MouseHover(object sender, EventArgs e)

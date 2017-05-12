@@ -46,7 +46,7 @@ namespace Presentation
           
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -56,6 +56,45 @@ namespace Presentation
 
         }
 
-        
+        private void ThemButton_MouseHover(object sender, EventArgs e)
+        {
+            ThemButton.BackColor = Color.White;            
+        }
+
+        private void CapNhapButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void XemChiTietButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThemButton_MouseLeave(object sender, EventArgs e)
+        {
+            ThemButton.BackColor = Color.Aquamarine;         
+        }
+
+        private void XoaButton_MouseHover(object sender, EventArgs e)
+        {
+            XoaButton.BackColor = Color.White;
+        }
+
+        private void XoaButton_MouseLeave(object sender, EventArgs e)
+        {
+            XoaButton.BackColor = Color.Aquamarine;
+        }
+
+        private void CapNhapButton_MouseLeave(object sender, EventArgs e)
+        {
+            CapNhapButton.BackColor = Color.Aquamarine;
+        }
+
+        private void CapNhapButton_MouseHover(object sender, EventArgs e)
+        {
+            CapNhapButton.BackColor = Color.White;
+        }
+              
     }
 }

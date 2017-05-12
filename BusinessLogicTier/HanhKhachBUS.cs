@@ -8,10 +8,10 @@ using DataAccessTier;
 
 namespace BusinessLogicTier
 {
-    public class HanhKhachBUS
+    public class HanhkhachBUS
     {
         public HanhkhachDAO hanhkhachDAO;
-        public HanhKhachBUS()
+        public HanhkhachBUS()
         {
             hanhkhachDAO = new HanhkhachDAO();
         }

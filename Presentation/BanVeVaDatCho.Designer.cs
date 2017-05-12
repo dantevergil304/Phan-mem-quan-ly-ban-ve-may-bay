@@ -33,6 +33,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanVeVaDatCho));
             this.label10 = new System.Windows.Forms.Label();
             this.DatChoPanel = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Taomoi1Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -56,7 +61,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BanVeButton = new System.Windows.Forms.Button();
+            this.DatChoButton = new System.Windows.Forms.Button();
             this.BanVePanel = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.Taomoi2Button = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -78,10 +90,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.BanVeButton = new System.Windows.Forms.Button();
-            this.DatChoButton = new System.Windows.Forms.Button();
-            this.Taomoi2Button = new System.Windows.Forms.Button();
-            this.Taomoi1Button = new System.Windows.Forms.Button();
             this.DatChoPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.BanVePanel.SuspendLayout();
@@ -99,6 +107,10 @@
             // 
             // DatChoPanel
             // 
+            this.DatChoPanel.Controls.Add(this.label37);
+            this.DatChoPanel.Controls.Add(this.label38);
+            this.DatChoPanel.Controls.Add(this.label39);
+            this.DatChoPanel.Controls.Add(this.label40);
             this.DatChoPanel.Controls.Add(this.Taomoi1Button);
             this.DatChoPanel.Controls.Add(this.label10);
             this.DatChoPanel.Controls.Add(this.label1);
@@ -123,10 +135,74 @@
             this.DatChoPanel.Controls.Add(this.label4);
             this.DatChoPanel.Controls.Add(this.label3);
             this.DatChoPanel.Controls.Add(this.label2);
-            this.DatChoPanel.Location = new System.Drawing.Point(231, 1);
+            this.DatChoPanel.Location = new System.Drawing.Point(234, 2);
             this.DatChoPanel.Name = "DatChoPanel";
-            this.DatChoPanel.Size = new System.Drawing.Size(619, 545);
+            this.DatChoPanel.Size = new System.Drawing.Size(682, 545);
             this.DatChoPanel.TabIndex = 30;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.DarkRed;
+            this.label37.Location = new System.Drawing.Point(456, 250);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(171, 15);
+            this.label37.TabIndex = 60;
+            this.label37.Text = "* Mã chuyến bay không hợp lệ";
+            this.label37.Visible = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.DarkRed;
+            this.label38.Location = new System.Drawing.Point(456, 192);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(113, 15);
+            this.label38.TabIndex = 59;
+            this.label38.Text = "* SĐT không hợp lệ";
+            this.label38.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.DarkRed;
+            this.label39.Location = new System.Drawing.Point(454, 136);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(126, 15);
+            this.label39.TabIndex = 58;
+            this.label39.Text = "* CMND không hợp lệ";
+            this.label39.Visible = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.DarkRed;
+            this.label40.Location = new System.Drawing.Point(454, 85);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(110, 15);
+            this.label40.TabIndex = 57;
+            this.label40.Text = "* Tên không hợp lệ";
+            this.label40.Visible = false;
+            // 
+            // Taomoi1Button
+            // 
+            this.Taomoi1Button.BackColor = System.Drawing.Color.Blue;
+            this.Taomoi1Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Taomoi1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Taomoi1Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Taomoi1Button.ForeColor = System.Drawing.Color.Snow;
+            this.Taomoi1Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Taomoi1Button.Location = new System.Drawing.Point(357, 490);
+            this.Taomoi1Button.Name = "Taomoi1Button";
+            this.Taomoi1Button.Size = new System.Drawing.Size(102, 35);
+            this.Taomoi1Button.TabIndex = 52;
+            this.Taomoi1Button.Text = "Tạo mới";
+            this.Taomoi1Button.UseVisualStyleBackColor = false;
+            this.Taomoi1Button.Click += new System.EventHandler(this.Taomoi1Button_Click);
             // 
             // label1
             // 
@@ -164,7 +240,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkRed;
-            this.label15.Location = new System.Drawing.Point(449, 312);
+            this.label15.Location = new System.Drawing.Point(456, 312);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(120, 15);
             this.label15.TabIndex = 49;
@@ -176,7 +252,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkRed;
-            this.label14.Location = new System.Drawing.Point(449, 136);
+            this.label14.Location = new System.Drawing.Point(454, 134);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(115, 15);
             this.label14.TabIndex = 48;
@@ -188,7 +264,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkRed;
-            this.label13.Location = new System.Drawing.Point(449, 192);
+            this.label13.Location = new System.Drawing.Point(454, 192);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(148, 15);
             this.label13.TabIndex = 47;
@@ -200,7 +276,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkRed;
-            this.label12.Location = new System.Drawing.Point(449, 249);
+            this.label12.Location = new System.Drawing.Point(456, 247);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(160, 15);
             this.label12.TabIndex = 46;
@@ -212,7 +288,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkRed;
-            this.label11.Location = new System.Drawing.Point(449, 80);
+            this.label11.Location = new System.Drawing.Point(454, 85);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 15);
             this.label11.TabIndex = 45;
@@ -241,6 +317,7 @@
             // 
             // MACBTextbox
             // 
+            this.MACBTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.MACBTextbox.Location = new System.Drawing.Point(231, 249);
             this.MACBTextbox.Name = "MACBTextbox";
             this.MACBTextbox.Size = new System.Drawing.Size(212, 20);
@@ -292,6 +369,7 @@
             // 
             // TENTextbox
             // 
+            this.TENTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TENTextbox.Location = new System.Drawing.Point(231, 80);
             this.TENTextbox.Name = "TENTextbox";
             this.TENTextbox.Size = new System.Drawing.Size(212, 20);
@@ -373,8 +451,49 @@
             this.panel2.Size = new System.Drawing.Size(228, 545);
             this.panel2.TabIndex = 31;
             // 
+            // BanVeButton
+            // 
+            this.BanVeButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BanVeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BanVeButton.BackgroundImage")));
+            this.BanVeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BanVeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BanVeButton.FlatAppearance.BorderSize = 0;
+            this.BanVeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BanVeButton.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanVeButton.ForeColor = System.Drawing.Color.Black;
+            this.BanVeButton.Location = new System.Drawing.Point(3, 272);
+            this.BanVeButton.Name = "BanVeButton";
+            this.BanVeButton.Size = new System.Drawing.Size(229, 273);
+            this.BanVeButton.TabIndex = 1;
+            this.BanVeButton.Text = "Bán vé";
+            this.BanVeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BanVeButton.UseVisualStyleBackColor = false;
+            this.BanVeButton.Click += new System.EventHandler(this.BanVeButton_Click);
+            // 
+            // DatChoButton
+            // 
+            this.DatChoButton.BackColor = System.Drawing.Color.Yellow;
+            this.DatChoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DatChoButton.BackgroundImage")));
+            this.DatChoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.DatChoButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.DatChoButton.FlatAppearance.BorderSize = 0;
+            this.DatChoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DatChoButton.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatChoButton.Location = new System.Drawing.Point(3, 0);
+            this.DatChoButton.Name = "DatChoButton";
+            this.DatChoButton.Size = new System.Drawing.Size(225, 272);
+            this.DatChoButton.TabIndex = 0;
+            this.DatChoButton.Text = "Đặt chỗ";
+            this.DatChoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.DatChoButton.UseVisualStyleBackColor = false;
+            this.DatChoButton.Click += new System.EventHandler(this.DatChoButton_Click);
+            // 
             // BanVePanel
             // 
+            this.BanVePanel.Controls.Add(this.label36);
+            this.BanVePanel.Controls.Add(this.label35);
+            this.BanVePanel.Controls.Add(this.label34);
+            this.BanVePanel.Controls.Add(this.label26);
             this.BanVePanel.Controls.Add(this.Taomoi2Button);
             this.BanVePanel.Controls.Add(this.label18);
             this.BanVePanel.Controls.Add(this.label19);
@@ -397,10 +516,74 @@
             this.BanVePanel.Controls.Add(this.label31);
             this.BanVePanel.Controls.Add(this.label32);
             this.BanVePanel.Controls.Add(this.label33);
-            this.BanVePanel.Location = new System.Drawing.Point(231, 1);
+            this.BanVePanel.Location = new System.Drawing.Point(234, 2);
             this.BanVePanel.Name = "BanVePanel";
-            this.BanVePanel.Size = new System.Drawing.Size(619, 545);
+            this.BanVePanel.Size = new System.Drawing.Size(682, 545);
             this.BanVePanel.TabIndex = 53;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DarkRed;
+            this.label36.Location = new System.Drawing.Point(449, 252);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(171, 15);
+            this.label36.TabIndex = 56;
+            this.label36.Text = "* Mã chuyến bay không hợp lệ";
+            this.label36.Visible = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.DarkRed;
+            this.label35.Location = new System.Drawing.Point(449, 192);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(113, 15);
+            this.label35.TabIndex = 55;
+            this.label35.Text = "* SĐT không hợp lệ";
+            this.label35.Visible = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.DarkRed;
+            this.label34.Location = new System.Drawing.Point(449, 136);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(126, 15);
+            this.label34.TabIndex = 54;
+            this.label34.Text = "* CMND không hợp lệ";
+            this.label34.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.DarkRed;
+            this.label26.Location = new System.Drawing.Point(452, 83);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(110, 15);
+            this.label26.TabIndex = 53;
+            this.label26.Text = "* Tên không hợp lệ";
+            this.label26.Visible = false;
+            // 
+            // Taomoi2Button
+            // 
+            this.Taomoi2Button.BackColor = System.Drawing.Color.Blue;
+            this.Taomoi2Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Taomoi2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Taomoi2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Taomoi2Button.ForeColor = System.Drawing.Color.Snow;
+            this.Taomoi2Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Taomoi2Button.Location = new System.Drawing.Point(371, 490);
+            this.Taomoi2Button.Name = "Taomoi2Button";
+            this.Taomoi2Button.Size = new System.Drawing.Size(102, 35);
+            this.Taomoi2Button.TabIndex = 52;
+            this.Taomoi2Button.Text = "Tạo mới";
+            this.Taomoi2Button.UseVisualStyleBackColor = false;
+            this.Taomoi2Button.Click += new System.EventHandler(this.Taomoi2Button_Click);
             // 
             // label18
             // 
@@ -504,6 +687,7 @@
             // 
             // BVMACBTextbox
             // 
+            this.BVMACBTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.BVMACBTextbox.Location = new System.Drawing.Point(231, 249);
             this.BVMACBTextbox.Name = "BVMACBTextbox";
             this.BVMACBTextbox.Size = new System.Drawing.Size(212, 20);
@@ -555,6 +739,7 @@
             // 
             // BVTenTextbox
             // 
+            this.BVTenTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.BVTenTextbox.Location = new System.Drawing.Point(231, 80);
             this.BVTenTextbox.Name = "BVTenTextbox";
             this.BVTenTextbox.Size = new System.Drawing.Size(212, 20);
@@ -627,84 +812,15 @@
             this.label33.TabIndex = 31;
             this.label33.Text = "Tên khách hàng";
             // 
-            // BanVeButton
-            // 
-            this.BanVeButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BanVeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BanVeButton.BackgroundImage")));
-            this.BanVeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BanVeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BanVeButton.FlatAppearance.BorderSize = 0;
-            this.BanVeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BanVeButton.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BanVeButton.ForeColor = System.Drawing.Color.Black;
-            this.BanVeButton.Location = new System.Drawing.Point(3, 272);
-            this.BanVeButton.Name = "BanVeButton";
-            this.BanVeButton.Size = new System.Drawing.Size(229, 273);
-            this.BanVeButton.TabIndex = 1;
-            this.BanVeButton.Text = "Bán vé";
-            this.BanVeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BanVeButton.UseVisualStyleBackColor = false;
-            this.BanVeButton.Click += new System.EventHandler(this.BanVeButton_Click);
-            // 
-            // DatChoButton
-            // 
-            this.DatChoButton.BackColor = System.Drawing.Color.Yellow;
-            this.DatChoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DatChoButton.BackgroundImage")));
-            this.DatChoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.DatChoButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.DatChoButton.FlatAppearance.BorderSize = 0;
-            this.DatChoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DatChoButton.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatChoButton.Location = new System.Drawing.Point(3, 0);
-            this.DatChoButton.Name = "DatChoButton";
-            this.DatChoButton.Size = new System.Drawing.Size(225, 272);
-            this.DatChoButton.TabIndex = 0;
-            this.DatChoButton.Text = "Đặt chỗ";
-            this.DatChoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.DatChoButton.UseVisualStyleBackColor = false;
-            this.DatChoButton.Click += new System.EventHandler(this.DatChoButton_Click);
-            // 
-            // Taomoi2Button
-            // 
-            this.Taomoi2Button.BackColor = System.Drawing.Color.Blue;
-            this.Taomoi2Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Taomoi2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Taomoi2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Taomoi2Button.ForeColor = System.Drawing.Color.Snow;
-            this.Taomoi2Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Taomoi2Button.Location = new System.Drawing.Point(371, 490);
-            this.Taomoi2Button.Name = "Taomoi2Button";
-            this.Taomoi2Button.Size = new System.Drawing.Size(102, 35);
-            this.Taomoi2Button.TabIndex = 52;
-            this.Taomoi2Button.Text = "Tạo mới";
-            this.Taomoi2Button.UseVisualStyleBackColor = false;
-            this.Taomoi2Button.Click += new System.EventHandler(this.Taomoi2Button_Click);
-            // 
-            // Taomoi1Button
-            // 
-            this.Taomoi1Button.BackColor = System.Drawing.Color.Blue;
-            this.Taomoi1Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Taomoi1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Taomoi1Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Taomoi1Button.ForeColor = System.Drawing.Color.Snow;
-            this.Taomoi1Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Taomoi1Button.Location = new System.Drawing.Point(357, 490);
-            this.Taomoi1Button.Name = "Taomoi1Button";
-            this.Taomoi1Button.Size = new System.Drawing.Size(102, 35);
-            this.Taomoi1Button.TabIndex = 52;
-            this.Taomoi1Button.Text = "Tạo mới";
-            this.Taomoi1Button.UseVisualStyleBackColor = false;
-            this.Taomoi1Button.Click += new System.EventHandler(this.Taomoi1Button_Click);
-            // 
             // BanVeVaDatCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(856, 549);
-            this.Controls.Add(this.BanVePanel);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(928, 549);
             this.Controls.Add(this.DatChoPanel);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.BanVePanel);
             this.Name = "BanVeVaDatCho";
             this.Text = "Đặt vé";
             this.DatChoPanel.ResumeLayout(false);
@@ -769,5 +885,13 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button Taomoi1Button;
         private System.Windows.Forms.Button Taomoi2Button;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
     }
 }

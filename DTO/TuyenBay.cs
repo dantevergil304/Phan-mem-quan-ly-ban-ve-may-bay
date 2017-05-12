@@ -11,14 +11,13 @@ namespace DTO
         public string MaTuyenBay { get; set; }
         public string MaSanBayDi { get; set; }
         public string MaSanBayDen { get; set; }
+        
 
-        public DateTime NgayBay { get; set; }
-
-        public TuyenBay(string MaSanBayDi, string MaSanBayDen, DateTime NgayBay)
+        public TuyenBay(string MaTuyenBay = null, string MaSanBayDi = null , string MaSanBayDen = null)
         {
+            this.MaTuyenBay = MaTuyenBay;
             this.MaSanBayDi = MaSanBayDi;
             this.MaSanBayDen = MaSanBayDen;
-            this.NgayBay = NgayBay;
         }
     }
 }

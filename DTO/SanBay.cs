@@ -10,5 +10,11 @@ namespace DTO
     {
         public string MaSanBay { get; set; }
         public string TenSanBay { get; set; }
+
+        public SanBay(string MaSanBay, string TenSanBay)
+        {
+            this.MaSanBay = MaSanBay;
+            this.TenSanBay = TenSanBay;
+        }
     }
 }

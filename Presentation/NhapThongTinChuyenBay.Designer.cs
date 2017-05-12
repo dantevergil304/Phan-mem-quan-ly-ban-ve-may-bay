@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaoMoiButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -378,7 +379,7 @@
             this.LưuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LưuButton.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LưuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LưuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LưuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LưuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LưuButton.Location = new System.Drawing.Point(944, 514);
             this.LưuButton.Name = "LưuButton";
@@ -407,44 +408,59 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column1.HeaderText = "STT";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column2.HeaderText = "Sân bay trung gian";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column3.HeaderText = "Thời gian dừng (phút)";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column4.HeaderText = "Ghi chú";
             this.Column4.Name = "Column4";
+            // 
+            // TaoMoiButton
+            // 
+            this.TaoMoiButton.BackColor = System.Drawing.Color.Blue;
+            this.TaoMoiButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TaoMoiButton.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TaoMoiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaoMoiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaoMoiButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaoMoiButton.Location = new System.Drawing.Point(813, 514);
+            this.TaoMoiButton.Name = "TaoMoiButton";
+            this.TaoMoiButton.Size = new System.Drawing.Size(102, 35);
+            this.TaoMoiButton.TabIndex = 21;
+            this.TaoMoiButton.Text = "Tạo mới";
+            this.TaoMoiButton.UseVisualStyleBackColor = false;
             // 
             // NhapThongTinChuyenBay
             // 
@@ -452,6 +468,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1058, 561);
+            this.Controls.Add(this.TaoMoiButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.LưuButton);
@@ -504,5 +521,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        protected System.Windows.Forms.Button TaoMoiButton;
     }
 }

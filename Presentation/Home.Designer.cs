@@ -108,6 +108,7 @@
             this.button3.Text = "Quản lý sân bay và tuyến bay";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 

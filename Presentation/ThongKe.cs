@@ -18,6 +18,8 @@ namespace Presentation
             panel1.Visible = true;
             panel2.Visible = false;
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "yyyy";
             dateTimePicker1.CustomFormat = "yyyy";
             for (int i = 1; i <= 12; i++)
                 ThangCombobox.Items.Add(i);
@@ -79,6 +81,11 @@ namespace Presentation
         {
             Xem2Button.BackColor = Color.Blue;
             Xem2Button.ForeColor = Color.White;
+        }
+
+        private void ThongKe_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

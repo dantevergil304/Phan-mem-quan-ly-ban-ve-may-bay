@@ -39,13 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BanveDAO.cs" />
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="DatveDAO.cs" />
+    <Compile Include="BanvevadatveDAO.cs" />
     <Compile Include="Doanhthu.cs" />
     <Compile Include="HanhkhachDAO.cs" />
     <Compile Include="QuanlychuyenbayDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanlysanbayvatuyenbayDAO.cs" />
     <Compile Include="QuydinhDAO.cs" />
     <Compile Include="TracuuDAO.cs" />
   </ItemGroup>

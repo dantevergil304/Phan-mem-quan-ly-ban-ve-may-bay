@@ -117,10 +117,10 @@
             this.TIMCBButton.BackColor = System.Drawing.Color.LimeGreen;
             this.TIMCBButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.TIMCBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TIMCBButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TIMCBButton.Location = new System.Drawing.Point(435, 143);
+            this.TIMCBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TIMCBButton.Location = new System.Drawing.Point(439, 142);
             this.TIMCBButton.Name = "TIMCBButton";
-            this.TIMCBButton.Size = new System.Drawing.Size(158, 36);
+            this.TIMCBButton.Size = new System.Drawing.Size(153, 36);
             this.TIMCBButton.TabIndex = 7;
             this.TIMCBButton.Text = "Tìm chuyến bay";
             this.TIMCBButton.UseVisualStyleBackColor = false;
@@ -153,7 +153,7 @@
             // 
             this.XemTatCaButton.BackColor = System.Drawing.Color.Blue;
             this.XemTatCaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.XemTatCaButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XemTatCaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XemTatCaButton.ForeColor = System.Drawing.Color.White;
             this.XemTatCaButton.Location = new System.Drawing.Point(393, 198);
             this.XemTatCaButton.Name = "XemTatCaButton";
