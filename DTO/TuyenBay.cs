@@ -13,7 +13,7 @@ namespace DTO
         public string MaSanBayDen { get; set; }
         
 
-        public TuyenBay(string MaTuyenBay = null, string MaSanBayDi = null , string MaSanBayDen = null)
+        public TuyenBay( string MaSanBayDi = null , string MaSanBayDen = null, string MaTuyenBay = null)
         {
             this.MaTuyenBay = MaTuyenBay;
             this.MaSanBayDi = MaSanBayDi;

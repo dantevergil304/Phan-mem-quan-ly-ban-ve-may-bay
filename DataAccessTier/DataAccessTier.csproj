@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="BanvevadatveDAO.cs" />
-    <Compile Include="Doanhthu.cs" />
+    <Compile Include="ThongkeDAO.cs" />
     <Compile Include="HanhkhachDAO.cs" />
     <Compile Include="QuanlychuyenbayDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

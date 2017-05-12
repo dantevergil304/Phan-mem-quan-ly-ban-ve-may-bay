@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLySanBayVaTuyenBay));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -84,6 +84,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.SBCapNhapButton);
             this.panel1.Controls.Add(this.SBXoaButton);
@@ -164,6 +165,7 @@
             this.SBLuubutton.BackColor = System.Drawing.Color.Aquamarine;
             this.SBLuubutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SBLuubutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SBLuubutton.ForeColor = System.Drawing.Color.Blue;
             this.SBLuubutton.Image = ((System.Drawing.Image)(resources.GetObject("SBLuubutton.Image")));
             this.SBLuubutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SBLuubutton.Location = new System.Drawing.Point(362, 127);
@@ -217,6 +219,7 @@
             this.SBCapNhapButton.BackColor = System.Drawing.Color.Aquamarine;
             this.SBCapNhapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SBCapNhapButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SBCapNhapButton.ForeColor = System.Drawing.Color.Blue;
             this.SBCapNhapButton.Image = ((System.Drawing.Image)(resources.GetObject("SBCapNhapButton.Image")));
             this.SBCapNhapButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SBCapNhapButton.Location = new System.Drawing.Point(365, 338);
@@ -234,6 +237,7 @@
             this.SBXoaButton.BackColor = System.Drawing.Color.Aquamarine;
             this.SBXoaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SBXoaButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SBXoaButton.ForeColor = System.Drawing.Color.Blue;
             this.SBXoaButton.Image = ((System.Drawing.Image)(resources.GetObject("SBXoaButton.Image")));
             this.SBXoaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SBXoaButton.Location = new System.Drawing.Point(246, 338);
@@ -252,6 +256,7 @@
             this.SBThemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.SBThemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SBThemButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SBThemButton.ForeColor = System.Drawing.Color.Blue;
             this.SBThemButton.Image = ((System.Drawing.Image)(resources.GetObject("SBThemButton.Image")));
             this.SBThemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SBThemButton.Location = new System.Drawing.Point(127, 338);
@@ -273,7 +278,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(465, 282);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -288,6 +293,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.TBCapNhapButton);
             this.panel2.Controls.Add(this.TBXoaButton);
@@ -344,6 +350,7 @@
             this.TBLuubutton.BackColor = System.Drawing.Color.Aquamarine;
             this.TBLuubutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TBLuubutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBLuubutton.ForeColor = System.Drawing.Color.Blue;
             this.TBLuubutton.Image = ((System.Drawing.Image)(resources.GetObject("TBLuubutton.Image")));
             this.TBLuubutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TBLuubutton.Location = new System.Drawing.Point(360, 127);
@@ -403,7 +410,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 17);
+            this.label6.Location = new System.Drawing.Point(7, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 22);
             this.label6.TabIndex = 0;
@@ -414,6 +421,7 @@
             this.TBCapNhapButton.BackColor = System.Drawing.Color.Aquamarine;
             this.TBCapNhapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TBCapNhapButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCapNhapButton.ForeColor = System.Drawing.Color.Blue;
             this.TBCapNhapButton.Image = ((System.Drawing.Image)(resources.GetObject("TBCapNhapButton.Image")));
             this.TBCapNhapButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TBCapNhapButton.Location = new System.Drawing.Point(366, 338);
@@ -431,6 +439,7 @@
             this.TBXoaButton.BackColor = System.Drawing.Color.Aquamarine;
             this.TBXoaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TBXoaButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBXoaButton.ForeColor = System.Drawing.Color.Blue;
             this.TBXoaButton.Image = ((System.Drawing.Image)(resources.GetObject("TBXoaButton.Image")));
             this.TBXoaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TBXoaButton.Location = new System.Drawing.Point(247, 338);
@@ -448,6 +457,7 @@
             this.TBThemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TBThemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TBThemButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBThemButton.ForeColor = System.Drawing.Color.Blue;
             this.TBThemButton.Image = ((System.Drawing.Image)(resources.GetObject("TBThemButton.Image")));
             this.TBThemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TBThemButton.Location = new System.Drawing.Point(128, 338);
@@ -464,20 +474,20 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(14, 48);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(465, 282);
             this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // label2
             // 

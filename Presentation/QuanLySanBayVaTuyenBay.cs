@@ -23,11 +23,7 @@ namespace Presentation
         {         
             InitializeComponent();
             panel3.Visible = false;
-            panel4.Visible = false;
-            SBCapNhapButton.Enabled = false;
-            TBCapNhapButton.Enabled = false;
-            SBXoaButton.Enabled = false;
-            TBXoaButton.Enabled = false;
+            panel4.Visible = false;                        
             QuanLy = new QuanlysanbayvatuyenbayBUS();
             SBDiComboBox.DataSource = QuanLy.LayDanhSachSanBay();
             SBDiComboBox.DisplayMember = "TENSANBAY";
@@ -35,6 +31,12 @@ namespace Presentation
             SBDenComboBox.DataSource = QuanLy.LayDanhSachSanBay();
             SBDenComboBox.DisplayMember = "TENSANBAY";
             SBDenComboBox.ValueMember = "MASANBAY";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            setSanBayDataSource();
+            setTuyenBayDataSource();
+            MaSBtextBox.Text = dataGridView1.Rows[0].Cells[1].Value as string;
+            MaTBtextBox.Text = dataGridView2.Rows[0].Cells[1].Value as string;     
             flag = -1;
             flag2 = -1;
         }
@@ -44,6 +46,8 @@ namespace Presentation
         {
             dataGridView1.ReadOnly = false;
             dataGridView1.DataSource = null;
+            if (dataGridView1.Columns.Count == 1)
+                dataGridView1.Columns.RemoveAt(0);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
             col.ValueType = typeof(Int32);
@@ -53,7 +57,7 @@ namespace Presentation
             dataGridView1.DataSource = QuanLy.LayDanhSachSanBay();
             dataGridView1.Columns[1].HeaderText = "Mã sân bay";
             dataGridView1.Columns[2].HeaderText = "Tên sân bay";
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
             }
@@ -63,7 +67,9 @@ namespace Presentation
         private void setTuyenBayDataSource()
         {
             dataGridView2.ReadOnly = false;
-            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = null;            
+            if (dataGridView2.Columns.Count == 1)
+                dataGridView2.Columns.RemoveAt(0);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
             col.ValueType = typeof(Int32);
@@ -74,7 +80,7 @@ namespace Presentation
             dataGridView2.Columns[1].HeaderText = "Mã tuyến bay";
             dataGridView2.Columns[2].HeaderText = "Sân bay đi";
             dataGridView2.Columns[3].HeaderText = "Sân bay đến";
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
             {
                 dataGridView2.Rows[i].Cells[0].Value = i + 1;
             }
@@ -302,18 +308,14 @@ namespace Presentation
         {
             MaTBtextBox.Text = "";
         }
-
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            SBXoaButton.Enabled = true;
-            SBCapNhapButton.Enabled = true;
+     
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {           
             MaSBtextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value as string;
         }
 
-        private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TBXoaButton.Enabled = true;
-            TBCapNhapButton.Enabled = true;
             MaTBtextBox.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value as string;     
         }
 

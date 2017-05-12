@@ -32,11 +32,21 @@ namespace Presentation
             SBDENBox.DataSource = DanhSachSanBayDen;
             SBDENBox.DisplayMember = "TENSANBAY";
             SBDENBox.ValueMember = "MASANBAY";
-           
             
-        }      
-
+            
+        }
+        private void clearDataGridView(DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            if (dgv.Columns.Count >= 1)
+                dgv.Columns.RemoveAt(0);
+            dgv.Rows.Clear();
+            dgv.Refresh();
+        }
+        
         private void setDataSourceToDataGridView(DataTable table){
+            dataGridView1.Enabled = true;
+            clearDataGridView(dataGridView1);
             DataGridViewTextBoxColumn stt = new DataGridViewTextBoxColumn();
             stt.ValueType = typeof(Int32);
             stt.HeaderText = "STT";
@@ -49,10 +59,11 @@ namespace Presentation
             dataGridView1.Columns[5].HeaderText = "Thời gian bay";
             dataGridView1.Columns[6].HeaderText = "Số ghế trống";
             dataGridView1.Columns[7].HeaderText = "Số ghế đã đặt";
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
             }
+            dataGridView1.Enabled = false;
         }
         
 
@@ -62,7 +73,8 @@ namespace Presentation
                 DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay, NGBAYDate.Value);
                 if (table.Rows.Count == 0)
                 {                                        
-                    label5.Visible = true;                    
+                    label5.Visible = true;
+                    clearDataGridView(dataGridView1);
                 }
                 else
                 {                                                            
