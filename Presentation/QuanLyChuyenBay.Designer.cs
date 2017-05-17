@@ -32,13 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CapNhapButton = new System.Windows.Forms.Button();
+            this.XoaButton = new System.Windows.Forms.Button();
+            this.ThemButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.CapNhapButton = new System.Windows.Forms.Button();
-            this.XoaButton = new System.Windows.Forms.Button();
-            this.ThemButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -57,8 +58,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(174, 126);
+            this.dataGridView1.Location = new System.Drawing.Point(174, 137);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(798, 254);
             this.dataGridView1.TabIndex = 2;
@@ -77,10 +79,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
+            // CapNhapButton
+            // 
+            this.CapNhapButton.BackColor = System.Drawing.Color.Aquamarine;
+            this.CapNhapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CapNhapButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CapNhapButton.ForeColor = System.Drawing.Color.Blue;
+            this.CapNhapButton.Image = ((System.Drawing.Image)(resources.GetObject("CapNhapButton.Image")));
+            this.CapNhapButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CapNhapButton.Location = new System.Drawing.Point(16, 215);
+            this.CapNhapButton.Name = "CapNhapButton";
+            this.CapNhapButton.Size = new System.Drawing.Size(113, 47);
+            this.CapNhapButton.TabIndex = 2;
+            this.CapNhapButton.Text = "Cập nhập";
+            this.CapNhapButton.UseVisualStyleBackColor = false;
+            this.CapNhapButton.Click += new System.EventHandler(this.CapNhapButton_Click);
+            this.CapNhapButton.MouseLeave += new System.EventHandler(this.CapNhapButton_MouseLeave);
+            this.CapNhapButton.MouseHover += new System.EventHandler(this.CapNhapButton_MouseHover);
+            // 
+            // XoaButton
+            // 
+            this.XoaButton.BackColor = System.Drawing.Color.Aquamarine;
+            this.XoaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XoaButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaButton.ForeColor = System.Drawing.Color.Blue;
+            this.XoaButton.Image = ((System.Drawing.Image)(resources.GetObject("XoaButton.Image")));
+            this.XoaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.XoaButton.Location = new System.Drawing.Point(16, 121);
+            this.XoaButton.Name = "XoaButton";
+            this.XoaButton.Size = new System.Drawing.Size(113, 47);
+            this.XoaButton.TabIndex = 1;
+            this.XoaButton.Text = "Xóa";
+            this.XoaButton.UseVisualStyleBackColor = false;
+            this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
+            this.XoaButton.MouseLeave += new System.EventHandler(this.XoaButton_MouseLeave);
+            this.XoaButton.MouseHover += new System.EventHandler(this.XoaButton_MouseHover);
+            // 
+            // ThemButton
+            // 
+            this.ThemButton.BackColor = System.Drawing.Color.Aquamarine;
+            this.ThemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ThemButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.ThemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemButton.ForeColor = System.Drawing.Color.Blue;
+            this.ThemButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemButton.Image")));
+            this.ThemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ThemButton.Location = new System.Drawing.Point(16, 30);
+            this.ThemButton.Name = "ThemButton";
+            this.ThemButton.Size = new System.Drawing.Size(113, 47);
+            this.ThemButton.TabIndex = 0;
+            this.ThemButton.Text = "Thêm";
+            this.ThemButton.UseVisualStyleBackColor = false;
+            this.ThemButton.Click += new System.EventHandler(this.ThemButton_Click);
+            this.ThemButton.MouseLeave += new System.EventHandler(this.ThemButton_MouseLeave);
+            this.ThemButton.MouseHover += new System.EventHandler(this.ThemButton_MouseHover);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(174, 413);
+            this.dataGridView2.Location = new System.Drawing.Point(174, 448);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(798, 135);
             this.dataGridView2.TabIndex = 4;
@@ -116,57 +174,16 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // CapNhapButton
+            // label3
             // 
-            this.CapNhapButton.BackColor = System.Drawing.Color.Aquamarine;
-            this.CapNhapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CapNhapButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CapNhapButton.Image = ((System.Drawing.Image)(resources.GetObject("CapNhapButton.Image")));
-            this.CapNhapButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CapNhapButton.Location = new System.Drawing.Point(16, 215);
-            this.CapNhapButton.Name = "CapNhapButton";
-            this.CapNhapButton.Size = new System.Drawing.Size(113, 47);
-            this.CapNhapButton.TabIndex = 2;
-            this.CapNhapButton.Text = "Cập nhập";
-            this.CapNhapButton.UseVisualStyleBackColor = false;
-            this.CapNhapButton.Click += new System.EventHandler(this.CapNhapButton_Click);
-            this.CapNhapButton.MouseLeave += new System.EventHandler(this.CapNhapButton_MouseLeave);
-            this.CapNhapButton.MouseHover += new System.EventHandler(this.CapNhapButton_MouseHover);
-            // 
-            // XoaButton
-            // 
-            this.XoaButton.BackColor = System.Drawing.Color.Aquamarine;
-            this.XoaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.XoaButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaButton.Image = ((System.Drawing.Image)(resources.GetObject("XoaButton.Image")));
-            this.XoaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.XoaButton.Location = new System.Drawing.Point(16, 121);
-            this.XoaButton.Name = "XoaButton";
-            this.XoaButton.Size = new System.Drawing.Size(113, 47);
-            this.XoaButton.TabIndex = 1;
-            this.XoaButton.Text = "Xóa";
-            this.XoaButton.UseVisualStyleBackColor = false;
-            this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
-            this.XoaButton.MouseLeave += new System.EventHandler(this.XoaButton_MouseLeave);
-            this.XoaButton.MouseHover += new System.EventHandler(this.XoaButton_MouseHover);
-            // 
-            // ThemButton
-            // 
-            this.ThemButton.BackColor = System.Drawing.Color.Aquamarine;
-            this.ThemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ThemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemButton.Image")));
-            this.ThemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ThemButton.Location = new System.Drawing.Point(16, 30);
-            this.ThemButton.Name = "ThemButton";
-            this.ThemButton.Size = new System.Drawing.Size(113, 47);
-            this.ThemButton.TabIndex = 0;
-            this.ThemButton.Text = "Thêm";
-            this.ThemButton.UseVisualStyleBackColor = false;
-            this.ThemButton.Click += new System.EventHandler(this.ThemButton_Click);
-            this.ThemButton.MouseLeave += new System.EventHandler(this.ThemButton_MouseLeave);
-            this.ThemButton.MouseHover += new System.EventHandler(this.ThemButton_MouseHover);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label3.Location = new System.Drawing.Point(173, 416);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(213, 29);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Chi tiết chuyến bay";
             // 
             // QuanLyChuyenBay
             // 
@@ -174,6 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 608);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -204,6 +222,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button SearchButton;
+        protected System.Windows.Forms.Label label3;
 
     }
 }

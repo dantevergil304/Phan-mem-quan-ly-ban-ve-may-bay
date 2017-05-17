@@ -21,13 +21,13 @@ namespace DataAccessTier
         {
             try
             {
-                connection = new SqlConnection(@"Data Source=.\MINHHIEU;Initial Catalog=BANVEMAYBAY;Integrated Security=True");
+                connection = new SqlConnection(@"Data Source=.\MINHHIEU;Initial Catalog=DB_BANVEMAYBAY;Integrated Security=True");
             }
             catch (Exception)
             {                
             }
         }
-        protected DataTable ExecuteQuery(string query, Dictionary<string, object> parameters = null)
+        protected DataTable ExecuteQuery(string StoreProcedure, Dictionary<string, object> parameters = null)
         {
             if (!KiemTraKetNoi())
             {
@@ -35,7 +35,7 @@ namespace DataAccessTier
             }
             try
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure, connection);
                 if (parameters != null)
                 {
                     foreach (KeyValuePair<string, object> entry in parameters)
@@ -45,18 +45,19 @@ namespace DataAccessTier
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
-                adapter.Fill(table);
-                connection.Close();
+                adapter.Fill(table);             
                 return table;
             }
             catch (Exception)
-            {
-
-                connection.Close();
-                
+            {                
                 return null;
             }
+            finally
+            {
+                connection.Close();
+            }
         }
+
         protected void ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
         {
             if (!KiemTraKetNoi())
@@ -73,8 +74,64 @@ namespace DataAccessTier
                 }
                 command.ExecuteNonQuery();
             }
-            catch (Exception){
-                throw new Exception();
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        protected void ExcuteStoreProcedure(string sp, Dictionary<string, object> parameters = null){
+            if (!KiemTraKetNoi())
+            {
+                connection.Open();
+            }
+            try
+            {
+                SqlCommand command = new SqlCommand(sp, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> entry in parameters)
+                        command.Parameters.AddWithValue(entry.Key, entry.Value);
+                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        protected DataTable ExcuteStoreProcedureReturnRecord(string sp, Dictionary<string, object> parameters = null){
+            if (!KiemTraKetNoi())
+            {
+                connection.Open();
+            }
+            try
+            {
+                 SqlCommand command = new SqlCommand(sp, connection);
+                 command.CommandType = CommandType.StoredProcedure;
+                 if (parameters != null)
+                 {
+                     foreach (KeyValuePair<string, object> entry in parameters)
+                         command.Parameters.AddWithValue(entry.Key, entry.Value);
+                 }
+                 SqlDataAdapter adapter = new SqlDataAdapter();
+                 adapter.SelectCommand = command;
+                 DataTable table = new DataTable();
+                 adapter.Fill(table);
+                 return table;
+            }
+            catch (Exception)
+            {
+                return null;
             }
             finally
             {

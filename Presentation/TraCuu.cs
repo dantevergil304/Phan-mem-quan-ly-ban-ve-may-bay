@@ -16,25 +16,66 @@ namespace Presentation
     public partial class TraCuu : Form
     {
         private TracuuBUS tracuuBUS;
-        private DataTable DanhSachSanBayDi;
-        private DataTable DanhSachSanBayDen;        
+        private QuanlysanbayvatuyenbayBUS quanlyBUS;
         public TraCuu()
         {
             InitializeComponent();
             tracuuBUS = new TracuuBUS();
-            DanhSachSanBayDen = tracuuBUS.LayDanhSachSanBay();
-            DanhSachSanBayDi = tracuuBUS.LayDanhSachSanBay();
+            quanlyBUS = new QuanlysanbayvatuyenbayBUS();                                                 
+        }
 
-            SBDIBox.DataSource = DanhSachSanBayDi;
+        private bool KiemTraInput()
+        {
+            bool check = true;
+            if ((int)SBDIBox.SelectedValue == (int)SBDENBox.SelectedValue)
+            {
+                label7.Visible = true;
+                label5.Visible = false;
+                check = false;
+            }
+            return check;
+        }
+
+        //Xử lý biến cố của các control
+        private void TraCuu_Load(object sender, EventArgs e)
+        {
+            SBDIBox.DataSource = quanlyBUS.LayDanhSachSanBay();
             SBDIBox.DisplayMember = "TENSANBAY";
             SBDIBox.ValueMember = "MASANBAY";
 
-            SBDENBox.DataSource = DanhSachSanBayDen;
+            SBDENBox.DataSource = quanlyBUS.LayDanhSachSanBay();
             SBDENBox.DisplayMember = "TENSANBAY";
-            SBDENBox.ValueMember = "MASANBAY";
-            
-            
+            SBDENBox.ValueMember = "MASANBAY";          
         }
+
+
+        private void TIMCBButton_Click(object sender, EventArgs e)
+        {
+            if (KiemTraInput())
+            {
+                TuyenBay tuyenbay = new TuyenBay((int)SBDIBox.SelectedValue, (int)SBDENBox.SelectedValue);
+                DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay, NGBAYDate.Value);
+                if (table.Rows.Count == 0)
+                {
+                    label5.Visible = true;
+                    label7.Visible = false;
+                    clearDataGridView(dataGridView1);
+                }
+                else
+                {
+                    label5.Visible = false;
+                    label7.Visible = false;
+                    setDataSourceToDataGridView(table);
+                }
+            }
+        }
+
+        private void XemTatCaButton_Click(object sender, EventArgs e)
+        {
+            setDataSourceToDataGridView(tracuuBUS.LayThongTinTatCaChuyenBay());
+        }
+
+        //Xử lý GUI của các control
         private void clearDataGridView(DataGridView dgv)
         {
             dgv.DataSource = null;
@@ -44,7 +85,8 @@ namespace Presentation
             dgv.Refresh();
         }
         
-        private void setDataSourceToDataGridView(DataTable table){
+        private void setDataSourceToDataGridView(DataTable table)
+        {
             dataGridView1.Enabled = true;
             clearDataGridView(dataGridView1);
             DataGridViewTextBoxColumn stt = new DataGridViewTextBoxColumn();
@@ -59,29 +101,12 @@ namespace Presentation
             dataGridView1.Columns[5].HeaderText = "Thời gian bay";
             dataGridView1.Columns[6].HeaderText = "Số ghế trống";
             dataGridView1.Columns[7].HeaderText = "Số ghế đã đặt";
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
             }
             dataGridView1.Enabled = false;
         }
-        
-
-        private void TIMCBButton_Click(object sender, EventArgs e)
-        {
-                TuyenBay tuyenbay = new TuyenBay(SBDIBox.SelectedValue as string,SBDENBox.SelectedValue as string);
-                DataTable table = tracuuBUS.LayThongTinChuyenBayTheoTuyenBay(tuyenbay, NGBAYDate.Value);
-                if (table.Rows.Count == 0)
-                {                                        
-                    label5.Visible = true;
-                    clearDataGridView(dataGridView1);
-                }
-                else
-                {                                                            
-                    label5.Visible = false;
-                    setDataSourceToDataGridView(table);                    
-                }
-        }        
 
         private void TIMCBButton_MouseHover(object sender, EventArgs e)
         {
@@ -93,10 +118,7 @@ namespace Presentation
             TIMCBButton.BackColor = Color.LimeGreen;
         }
 
-        private void XemTatCaButton_Click(object sender, EventArgs e)
-        {            
-            setDataSourceToDataGridView(tracuuBUS.LayThongTinTatCaChuyenBay());            
-        }
+       
 
         private void XemTatCaButton_MouseHover(object sender, EventArgs e)
         {
@@ -108,6 +130,7 @@ namespace Presentation
         {
             XemTatCaButton.BackColor = Color.Blue;
             XemTatCaButton.ForeColor = Color.White;
-        }        
+        }
+                   
     }
 }

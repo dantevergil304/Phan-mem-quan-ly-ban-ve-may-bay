@@ -24,30 +24,40 @@ namespace Presentation
             InitializeComponent();
             panel3.Visible = false;
             panel4.Visible = false;                        
-            QuanLy = new QuanlysanbayvatuyenbayBUS();
+            QuanLy = new QuanlysanbayvatuyenbayBUS();           
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;                      
+        }
+
+        private void QuanLySanBayVaTuyenBay_Load(object sender, EventArgs e)
+        {
+            setSanBayDataSource();
+            setTuyenBayDataSource();
             SBDiComboBox.DataSource = QuanLy.LayDanhSachSanBay();
             SBDiComboBox.DisplayMember = "TENSANBAY";
             SBDiComboBox.ValueMember = "MASANBAY";
             SBDenComboBox.DataSource = QuanLy.LayDanhSachSanBay();
             SBDenComboBox.DisplayMember = "TENSANBAY";
             SBDenComboBox.ValueMember = "MASANBAY";
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            setSanBayDataSource();
-            setTuyenBayDataSource();
-            MaSBtextBox.Text = dataGridView1.Rows[0].Cells[1].Value as string;
-            MaTBtextBox.Text = dataGridView2.Rows[0].Cells[1].Value as string;     
+            MaSBtextBox.Text = ((int)dataGridView1.Rows[0].Cells[1].Value).ToString();
+            MaTBtextBox.Text = ((int)dataGridView2.Rows[0].Cells[1].Value).ToString();
             flag = -1;
             flag2 = -1;
         }
 
+        private void clearDataGridView(DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            if (dgv.Columns.Count >= 1)
+                dgv.Columns.RemoveAt(0);
+            dgv.Rows.Clear();
+            dgv.Refresh();
+        }
 
         private void setSanBayDataSource()
         {
             dataGridView1.ReadOnly = false;
-            dataGridView1.DataSource = null;
-            if (dataGridView1.Columns.Count == 1)
-                dataGridView1.Columns.RemoveAt(0);
+            clearDataGridView(dataGridView1);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
             col.ValueType = typeof(Int32);
@@ -57,7 +67,7 @@ namespace Presentation
             dataGridView1.DataSource = QuanLy.LayDanhSachSanBay();
             dataGridView1.Columns[1].HeaderText = "Mã sân bay";
             dataGridView1.Columns[2].HeaderText = "Tên sân bay";
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
             }
@@ -67,9 +77,7 @@ namespace Presentation
         private void setTuyenBayDataSource()
         {
             dataGridView2.ReadOnly = false;
-            dataGridView2.DataSource = null;            
-            if (dataGridView2.Columns.Count == 1)
-                dataGridView2.Columns.RemoveAt(0);
+            clearDataGridView(dataGridView2);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
             col.ValueType = typeof(Int32);
@@ -80,7 +88,7 @@ namespace Presentation
             dataGridView2.Columns[1].HeaderText = "Mã tuyến bay";
             dataGridView2.Columns[2].HeaderText = "Sân bay đi";
             dataGridView2.Columns[3].HeaderText = "Sân bay đến";
-            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 dataGridView2.Rows[i].Cells[0].Value = i + 1;
             }
@@ -93,92 +101,6 @@ namespace Presentation
             if (reg.IsMatch(input))
                 return true;
             return false;
-        }
-
-
-        private void ThemButton_MouseHover(object sender, EventArgs e)
-        {
-            SBThemButton.BackColor = Color.White;
-        }
-
-        private void ThemButton_MouseLeave(object sender, EventArgs e)
-        {
-            SBThemButton.BackColor = Color.Aquamarine;
-        }
-
-        private void XoaButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void XoaButton_MouseHover(object sender, EventArgs e)
-        {
-            SBXoaButton.BackColor = Color.White;
-        }
-
-        private void XoaButton_MouseLeave(object sender, EventArgs e)
-        {
-            SBXoaButton.BackColor = Color.Aquamarine;
-        }
-
-        private void CapNhapButton_MouseHover(object sender, EventArgs e)
-        {
-            SBCapNhapButton.BackColor = Color.White;
-        }
-
-        private void CapNhapButton_MouseLeave(object sender, EventArgs e)
-        {
-            SBCapNhapButton.BackColor = Color.Aquamarine;
-        }
-
-        private void TBThemButton_MouseHover(object sender, EventArgs e)
-        {
-            TBThemButton.BackColor = Color.White;            
-        }
-
-        private void TBThemButton_MouseLeave(object sender, EventArgs e)
-        {
-            TBThemButton.BackColor = Color.Aquamarine;
-        }
-
-        private void TBXoaButton_MouseHover(object sender, EventArgs e)
-        {
-            TBXoaButton.BackColor = Color.White;
-        }
-
-        private void TBXoaButton_MouseLeave(object sender, EventArgs e)
-        {
-            TBXoaButton.BackColor = Color.Aquamarine;
-        }
-
-        private void TBCapNhapButton_MouseHover(object sender, EventArgs e)
-        {
-            TBCapNhapButton.BackColor = Color.White;
-        }
-
-        private void TBCapNhapButton_MouseLeave(object sender, EventArgs e)
-        {
-            TBCapNhapButton.BackColor = Color.Aquamarine;           
-        }
-
-        private void SBLuubutton_MouseHover(object sender, EventArgs e)
-        {
-            SBLuubutton.BackColor = Color.White;
-        }
-
-        private void SBLuubutton_MouseLeave(object sender, EventArgs e)
-        {
-            SBLuubutton.BackColor = Color.Aquamarine;
-        }
-
-        private void TBLuubutton_MouseHover(object sender, EventArgs e)
-        {
-            TBLuubutton.BackColor = Color.White;
-        }
-
-        private void TBLuubutton_MouseLeave(object sender, EventArgs e)
-        {
-            TBLuubutton.BackColor = Color.Aquamarine;
         }
 
         private bool validation1()
@@ -204,7 +126,7 @@ namespace Presentation
                 check = false;
             }
 
-            if (!KiemTraTinhHopLeCuaInput(@"[A-ZÁÀẠÃẢÂẤẦẨẪẬĂẮẰẲẴẶƯỨỪỬỮỰÉÈẸẺẼÚÙỤỦŨÍÌỊĨỈÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÊẾỀỆỂỄĐ\s]",TenSBtextBox.Text))
+            if (!KiemTraTinhHopLeCuaInput(@"[A-ZÁÀẠÃẢÂẤẦẨẪẬĂẮẰẲẴẶƯỨỪỬỮỰÉÈẸẺẼÚÙỤỦŨÍÌỊĨỈÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÊẾỀỆỂỄĐ\s]", TenSBtextBox.Text))
             {
                 label11.Visible = false;
                 label8.Visible = true;
@@ -229,8 +151,97 @@ namespace Presentation
                 label9.Visible = false;
                 check = false;
             }
-                
+
             return check;
+        }
+      
+        //Xử lý hiển thị của các control
+        private void ThemButton_MouseHover(object sender, EventArgs e)
+        {
+            SBThemButton.BackColor = Color.White;
+        }
+
+        private void ThemButton_MouseLeave(object sender, EventArgs e)
+        {
+            SBThemButton.BackColor = Color.Aquamarine;
+        }
+
+        private void XoaButton_MouseHover(object sender, EventArgs e)
+        {
+            SBXoaButton.BackColor = Color.White;
+        }
+
+        private void XoaButton_MouseLeave(object sender, EventArgs e)
+        {
+            SBXoaButton.BackColor = Color.Aquamarine;
+        }
+
+        private void CapNhapButton_MouseHover(object sender, EventArgs e)
+        {
+            SBCapNhapButton.BackColor = Color.White;
+        }
+
+        private void CapNhapButton_MouseLeave(object sender, EventArgs e)
+        {
+            SBCapNhapButton.BackColor = Color.Aquamarine;
+        }
+
+        private void TBThemButton_MouseHover(object sender, EventArgs e)
+        {
+            TBThemButton.BackColor = Color.White;
+        }
+
+        private void TBThemButton_MouseLeave(object sender, EventArgs e)
+        {
+            TBThemButton.BackColor = Color.Aquamarine;
+            TBThemButton.ForeColor = Color.Blue;
+        }
+
+        private void TBXoaButton_MouseHover(object sender, EventArgs e)
+        {
+            TBXoaButton.BackColor = Color.White;
+        }
+
+        private void TBXoaButton_MouseLeave(object sender, EventArgs e)
+        {
+            TBXoaButton.BackColor = Color.Aquamarine;
+            TBXoaButton.ForeColor = Color.Blue;
+        }
+
+        private void TBCapNhapButton_MouseHover(object sender, EventArgs e)
+        {
+            TBCapNhapButton.BackColor = Color.White;
+        }
+
+        private void TBCapNhapButton_MouseLeave(object sender, EventArgs e)
+        {
+            TBCapNhapButton.BackColor = Color.Aquamarine;
+        }
+
+        private void SBLuubutton_MouseHover(object sender, EventArgs e)
+        {
+            SBLuubutton.BackColor = Color.White;
+        }
+
+        private void SBLuubutton_MouseLeave(object sender, EventArgs e)
+        {
+            SBLuubutton.BackColor = Color.Aquamarine;
+        }
+
+        private void TBLuubutton_MouseHover(object sender, EventArgs e)
+        {
+            TBLuubutton.BackColor = Color.White;
+        }
+
+        private void TBLuubutton_MouseLeave(object sender, EventArgs e)
+        {
+            TBLuubutton.BackColor = Color.Aquamarine;
+        }
+
+        //Xử lý các biến cố của các control
+        private void XoaButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void SBThemButton_Click(object sender, EventArgs e)
@@ -262,20 +273,14 @@ namespace Presentation
             MaTBtextBox.ReadOnly = true;
             flag2 = 1;
         }
-
-        private void QuanLySanBayVaTuyenBay_Load(object sender, EventArgs e)
-        {
-            setSanBayDataSource();
-            setTuyenBayDataSource();
-        }
-
+       
         private void SBLuubutton_Click(object sender, EventArgs e)
         {
             if (validation1())
             {
                 if (flag == 0)
                 {
-                    QuanLy.ThemSanBay(new SanBay(MaSBtextBox.Text, TenSBtextBox.Text));
+                    QuanLy.ThemSanBay(new SanBay(Int32.Parse(MaSBtextBox.Text),TenSBtextBox.Text));
                     setSanBayDataSource();
                     MessageBox.Show("Thêm sân bay thành công");
                     SBControlReset();
@@ -289,7 +294,7 @@ namespace Presentation
             {
                 if (flag2 == 0)
                 {
-                    QuanLy.ThemTuyenBay(new TuyenBay(MaTBtextBox.Text, SBDiComboBox.SelectedValue as string, SBDenComboBox.SelectedValue as string));
+                    QuanLy.ThemTuyenBay(new TuyenBay(Int32.Parse(MaTBtextBox.Text),(int)SBDiComboBox.SelectedValue,(int)SBDenComboBox.SelectedValue));
                     setTuyenBayDataSource();
                     MessageBox.Show("Thêm tuyến bay thành công");
                     TBControlReset();
@@ -311,17 +316,12 @@ namespace Presentation
      
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {           
-            MaSBtextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value as string;
+            MaSBtextBox.Text = ((int)dataGridView1.Rows[e.RowIndex].Cells[1].Value).ToString();
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MaTBtextBox.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value as string;     
-        }
-
-        
-
-      
-       
+            MaTBtextBox.Text = ((int)dataGridView2.Rows[e.RowIndex].Cells[1].Value).ToString();     
+        }              
     }
 }

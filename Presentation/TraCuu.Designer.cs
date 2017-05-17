@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.XemTatCaButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +131,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -177,12 +179,25 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "THÔNG TIN CHUYẾN BAY";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Crimson;
+            this.label7.Location = new System.Drawing.Point(608, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(203, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "* Sân bay không được trùng nhau";
+            this.label7.Visible = false;
+            // 
             // TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1044, 457);
+            this.ClientSize = new System.Drawing.Size(1044, 490);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.XemTatCaButton);
             this.Controls.Add(this.label5);
@@ -199,6 +214,7 @@
             this.HelpButton = true;
             this.Name = "TraCuu";
             this.Text = "Tra cứu";
+            this.Load += new System.EventHandler(this.TraCuu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,5 +235,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button XemTatCaButton;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

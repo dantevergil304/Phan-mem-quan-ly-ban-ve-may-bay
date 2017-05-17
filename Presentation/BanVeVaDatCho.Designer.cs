@@ -823,6 +823,7 @@
             this.Controls.Add(this.BanVePanel);
             this.Name = "BanVeVaDatCho";
             this.Text = "Đặt vé";
+            this.Load += new System.EventHandler(this.BanVeVaDatCho_Load);
             this.DatChoPanel.ResumeLayout(false);
             this.DatChoPanel.PerformLayout();
             this.panel2.ResumeLayout(false);

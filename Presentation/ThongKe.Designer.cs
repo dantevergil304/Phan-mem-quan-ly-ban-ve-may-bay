@@ -32,25 +32,27 @@
             this.ThangButton = new System.Windows.Forms.Button();
             this.NamButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Xem2Button = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.ThangCombobox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.XemButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Xem2Button = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +98,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.ThangCombobox);
@@ -106,8 +109,30 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(20, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(968, 376);
+            this.panel1.Size = new System.Drawing.Size(968, 362);
             this.panel1.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(178, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Tháng";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(3, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(179, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Chi tiết doanh thu tháng";
             // 
             // label6
             // 
@@ -116,78 +141,10 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(558, 125);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(241, 18);
+            this.label6.Size = new System.Drawing.Size(248, 18);
             this.label6.TabIndex = 9;
-            this.label6.Text = "* Không có thống kê trong năm này";
+            this.label6.Text = "* Không có thống kê trong tháng này";
             this.label6.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.Xem2Button);
-            this.panel2.Controls.Add(this.dataGridView2);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(20, 154);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(968, 359);
-            this.panel2.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(553, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(241, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "* Không có thống kê trong năm này";
-            this.label4.Visible = false;
-            // 
-            // Xem2Button
-            // 
-            this.Xem2Button.BackColor = System.Drawing.Color.Blue;
-            this.Xem2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Xem2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Xem2Button.ForeColor = System.Drawing.Color.White;
-            this.Xem2Button.Location = new System.Drawing.Point(413, 83);
-            this.Xem2Button.Name = "Xem2Button";
-            this.Xem2Button.Size = new System.Drawing.Size(121, 39);
-            this.Xem2Button.TabIndex = 5;
-            this.Xem2Button.Text = "Xem doanh thu";
-            this.Xem2Button.UseVisualStyleBackColor = false;
-            this.Xem2Button.Click += new System.EventHandler(this.Xem2Button_Click);
-            this.Xem2Button.MouseLeave += new System.EventHandler(this.Xem2Button_MouseLeave);
-            this.Xem2Button.MouseHover += new System.EventHandler(this.Xem2Button_MouseHover);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 158);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(961, 189);
-            this.dataGridView2.TabIndex = 4;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(441, 40);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(65, 20);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(366, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 22);
-            this.label5.TabIndex = 0;
-            this.label5.Text = " Năm";
             // 
             // ThangCombobox
             // 
@@ -250,6 +207,31 @@
             this.label2.TabIndex = 0;
             this.label2.Text = " Năm";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.Xem2Button);
+            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(17, 157);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(968, 341);
+            this.panel2.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Blue;
+            this.label9.Location = new System.Drawing.Point(168, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "năm";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -257,20 +239,64 @@
             this.label7.ForeColor = System.Drawing.Color.Blue;
             this.label7.Location = new System.Drawing.Point(3, 135);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 20);
+            this.label7.Size = new System.Drawing.Size(169, 20);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Chi tiết doanh thu";
+            this.label7.Text = "Chi tiết doanh thu năm";
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Blue;
-            this.label8.Location = new System.Drawing.Point(3, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Chi tiết doanh thu";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(553, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(241, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "* Không có thống kê trong năm này";
+            this.label4.Visible = false;
+            // 
+            // Xem2Button
+            // 
+            this.Xem2Button.BackColor = System.Drawing.Color.Blue;
+            this.Xem2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Xem2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Xem2Button.ForeColor = System.Drawing.Color.White;
+            this.Xem2Button.Location = new System.Drawing.Point(413, 83);
+            this.Xem2Button.Name = "Xem2Button";
+            this.Xem2Button.Size = new System.Drawing.Size(121, 39);
+            this.Xem2Button.TabIndex = 5;
+            this.Xem2Button.Text = "Xem doanh thu";
+            this.Xem2Button.UseVisualStyleBackColor = false;
+            this.Xem2Button.Click += new System.EventHandler(this.Xem2Button_Click);
+            this.Xem2Button.MouseLeave += new System.EventHandler(this.Xem2Button_MouseLeave);
+            this.Xem2Button.MouseHover += new System.EventHandler(this.Xem2Button_MouseHover);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 158);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(961, 159);
+            this.dataGridView2.TabIndex = 4;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(441, 40);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(65, 20);
+            this.dateTimePicker2.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(366, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 22);
+            this.label5.TabIndex = 0;
+            this.label5.Text = " Năm";
             // 
             // ThongKe
             // 
@@ -285,12 +311,13 @@
             this.Controls.Add(this.label1);
             this.Name = "ThongKe";
             this.Text = "Thống kê doanh thu";
+            this.Load += new System.EventHandler(this.ThongKe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +344,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

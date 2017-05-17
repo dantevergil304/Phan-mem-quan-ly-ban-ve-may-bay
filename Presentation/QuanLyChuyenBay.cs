@@ -19,12 +19,39 @@ namespace Presentation
         {
             InitializeComponent();
             QuanlychuyenbayBUS = new QuanlychuyenbayBUS();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.ReadOnly = true;
+        }
+        private void clearDataGridView(DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            if (dgv.Columns.Count >= 1)
+                dgv.Columns.RemoveAt(0);
+            dgv.Rows.Clear();
+            dgv.Refresh();
         }
 
-        private void setColumnHeaderWithDataSource1(DataTable table){
+        private void setDataSourceToThongTinChuyenBay(DataTable table)
+        {
+            dataGridView1.Enabled = true;
+            clearDataGridView(dataGridView1);
+            DataGridViewTextBoxColumn stt = new DataGridViewTextBoxColumn();
+            stt.ValueType = typeof(Int32);
+            stt.HeaderText = "STT";
+            dataGridView1.Columns.Add(stt);
             dataGridView1.DataSource = table;
+            dataGridView1.Columns[1].HeaderText = "Mã chuyến bay";
+            dataGridView1.Columns[2].HeaderText = "Tuyến bay";
+            dataGridView1.Columns[3].HeaderText = "Ngày giờ bay";
+            dataGridView1.Columns[4].HeaderText = "Thời gian bay";
+            dataGridView1.Columns[5].HeaderText = "Số lượng ghế hạng 1";
+            dataGridView1.Columns[6].HeaderText = "Số lượng ghế hạng 2";            
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i + 1;
+            }
+            dataGridView1.Enabled = false;
         }
-
         private void setColumnHeaderWithDataSource2(DataTable table)
         {
             dataGridView2.DataSource = table;
@@ -43,7 +70,8 @@ namespace Presentation
 
         private void QuanLyChuyenBay_Load(object sender, EventArgs e)
         {
-          
+
+            setDataSourceToThongTinChuyenBay(QuanlychuyenbayBUS.LayThongTinTatCaChuyenBay());
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -94,7 +122,6 @@ namespace Presentation
         private void CapNhapButton_MouseHover(object sender, EventArgs e)
         {
             CapNhapButton.BackColor = Color.White;
-        }
-              
+        }              
     }
 }

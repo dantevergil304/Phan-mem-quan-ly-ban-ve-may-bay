@@ -17,7 +17,7 @@ namespace BusinessLogicTier
         private QuanLyChuyenBayDAO QuanlychuyenbayDAO;
         public QuanlychuyenbayBUS()
         {
-
+            QuanlychuyenbayDAO = new QuanLyChuyenBayDAO();
         }
 
         public void ThemThongTinChuyenBay(ThongTinChuyenBay thongtin)
@@ -25,17 +25,14 @@ namespace BusinessLogicTier
            
         }
 
-        public DataTable LayThongTinChuyenBay(string MACB = null)
+        public DataTable LayThongTinTatCaChuyenBay(string MACB = null)
         {
-            if (!string.IsNullOrWhiteSpace(MACB))
-                return QuanlychuyenbayDAO.LayThongTinChuyenBay(MACB);
-            else
-                return QuanlychuyenbayDAO.LayThongTinChuyenBay();
+            return QuanlychuyenbayDAO.LayThongTinTatCaChuyenBay();
         }
 
-        public DataTable LayChiTietThongTinChuyenBay(string MACB)
+        public DataTable LayThongTinChuyenBay(string MaChuyenBay)
         {
-            return QuanlychuyenbayDAO.LayThongTinChiTietChuyenBay(MACB);
+            return QuanlychuyenbayDAO.LayThongTinChuyenBayTheoMaChuyenBay(MaChuyenBay);
         }
 
        

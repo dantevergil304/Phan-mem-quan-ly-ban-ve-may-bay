@@ -63,14 +63,12 @@ namespace DataAccessTier
 
         public DataTable LayDanhSachSanBay()
         {
-            string query = "SELECT * FROM SANBAY";
-            return ExecuteQuery(query, null);
-        }
+            return ExcuteStoreProcedureReturnRecord("SP_DANHSACH_TATCA_SANBAY");
+        }        
 
         public DataTable LayDanhSachTuyenBay()
         {
-            string query = "SELECT MATUYENBAY, b.TENSANBAY, c.TENSANBAY  FROM TUYENBAY a JOIN SANBAY b ON a.SANBAYDI = b.MASANBAY JOIN (SELECT * FROM SANBAY) c ON a.SANBAYDEN = c.MASANBAY";
-            return ExecuteQuery(query, null);
+            return ExcuteStoreProcedureReturnRecord("SP_DANHSACH_TATCA_TUYENBAY");
         }
     }
 }

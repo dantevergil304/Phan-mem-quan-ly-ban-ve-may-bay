@@ -22,44 +22,9 @@ namespace Presentation
         private HanhkhachBUS HanhKhachBUS;        
         public BanVeVaDatCho()
         {
-            InitializeComponent();
-            DatChoPanel.Visible = true;
-            BanVePanel.Visible = false;
-            DatChoButton.BackColor = Color.White;
-            label10.Text = DateTime.Now.ToShortDateString();            
-
-
+            InitializeComponent();          
             BanVeVaDatVeBUS = new BanvevadatveBUS();
-            HanhKhachBUS = new HanhkhachBUS();
-            
-            warningLabels = new Label[18];
-            warningLabels[0] = label11;
-            warningLabels[1] = label14;
-            warningLabels[2] = label13;
-            warningLabels[3] = label12;
-            warningLabels[4] = label15;
-            warningLabels[5] = label25;
-            warningLabels[6] = label22;
-            warningLabels[7] = label23;
-            warningLabels[8] = label24;
-            warningLabels[9] = label21;
-            warningLabels[10] = label40;
-            warningLabels[11] = label39;
-            warningLabels[12] = label38;
-            warningLabels[13] = label37;
-            warningLabels[14] = label26;
-            warningLabels[15] = label34;
-            warningLabels[16] = label35;
-            warningLabels[17] = label36;
-            
-            HVComboBox.DataSource = BanVeVaDatVeBUS.LayHangVe();
-            HVComboBox.DisplayMember = "TENHANGVE";
-            HVComboBox.ValueMember = "MAHANGVE";
-
-            BVHVCombobox.DataSource = BanVeVaDatVeBUS.LayHangVe();            
-            BVHVCombobox.DisplayMember = "TENHANGVE";
-            BVHVCombobox.ValueMember = "MAHANGVE";
-            
+            HanhKhachBUS = new HanhkhachBUS();                                  
         }
 
         private bool KiemTraTinhHopLeCuaInput(string pattern, string input)
@@ -202,7 +167,43 @@ namespace Presentation
                                             
             return check;
         }
-                 
+                
+        //Xử lý các biến cố
+        private void BanVeVaDatCho_Load(object sender, EventArgs e)
+        {
+            warningLabels = new Label[18];
+            warningLabels[0] = label11;
+            warningLabels[1] = label14;
+            warningLabels[2] = label13;
+            warningLabels[3] = label12;
+            warningLabels[4] = label15;
+            warningLabels[5] = label25;
+            warningLabels[6] = label22;
+            warningLabels[7] = label23;
+            warningLabels[8] = label24;
+            warningLabels[9] = label21;
+            warningLabels[10] = label40;
+            warningLabels[11] = label39;
+            warningLabels[12] = label38;
+            warningLabels[13] = label37;
+            warningLabels[14] = label26;
+            warningLabels[15] = label34;
+            warningLabels[16] = label35;
+            warningLabels[17] = label36;
+
+            HVComboBox.DataSource = BanVeVaDatVeBUS.LayHangVe();
+            HVComboBox.DisplayMember = "TENHANGVE";
+            HVComboBox.ValueMember = "MAHANGVE";
+
+            BVHVCombobox.DataSource = BanVeVaDatVeBUS.LayHangVe();
+            BVHVCombobox.DisplayMember = "TENHANGVE";
+            BVHVCombobox.ValueMember = "MAHANGVE";
+            DatChoPanel.Visible = true;
+            BanVePanel.Visible = false;
+            DatChoButton.BackColor = Color.White;
+            label10.Text = DateTime.Now.ToShortDateString();            
+
+        }
         private void DatChoControlsReset()
         {
             CMNDTextbox.Text = "";
@@ -256,6 +257,18 @@ namespace Presentation
             }            
         }
 
+        private void Taomoi1Button_Click(object sender, EventArgs e)
+        {
+            DatChoControlsReset();
+        }
+
+        private void Taomoi2Button_Click(object sender, EventArgs e)
+        {
+            BanVeControlsReset();
+        }                 
+
+
+        //Xử lý hiển thị GUI
         private void BVTenTextbox_TextChanged(object sender, EventArgs e)
         {
             warningLabels[5].Visible = false;
@@ -315,14 +328,8 @@ namespace Presentation
             warningLabels[14].Visible = false;
         }
 
-        private void Taomoi1Button_Click(object sender, EventArgs e)
-        {
-            DatChoControlsReset();
-        }
+       
 
-        private void Taomoi2Button_Click(object sender, EventArgs e)
-        {
-            BanVeControlsReset();
-        }                 
+      
     }
 }

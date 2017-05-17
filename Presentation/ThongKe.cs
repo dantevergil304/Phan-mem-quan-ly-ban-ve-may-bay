@@ -17,19 +17,7 @@ namespace Presentation
         public ThongKe()
         {
             InitializeComponent();
-            ThongKeDoanhThu = new ThongkeBUS();
-            panel1.Visible = true;
-            panel2.Visible = false;
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.CustomFormat = "yyyy";
-            dateTimePicker1.CustomFormat = "yyyy";
-            //dateTimePicker1.ShowUpDown = true;
-            //dateTimePicker1.ShowCheckBox = true;
-            //dateTimePicker2.ShowUpDown = true;
-            for (int i = 1; i <= 12; i++)
-                ThangCombobox.Items.Add(i);
-            ThangCombobox.SelectedIndex = 0;
+            ThongKeDoanhThu = new ThongkeBUS();          
         }
 
         private void setDoanhThuThangDataSource(DataTable table)
@@ -45,7 +33,7 @@ namespace Presentation
             dataGridView1.Columns[2].HeaderText = "Số vé";
             dataGridView1.Columns[3].HeaderText = "Doanh thu";
             dataGridView1.Columns[4].HeaderText = "Tỷ lệ";
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
             dataGridView1.Enabled = false;
                 
@@ -73,11 +61,70 @@ namespace Presentation
             dataGridView2.Columns[2].HeaderText = "Số chuyến bay";
             dataGridView2.Columns[3].HeaderText = "Doanh thu";
             dataGridView2.Columns[4].HeaderText = "Tỷ lệ";
-            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
-                dataGridView1.Rows[i].Cells[0].Value = i + 1;
+            for (int i = 0; i < dataGridView2.Rows.Count ; i++)
+                dataGridView2.Rows[i].Cells[0].Value = i + 1;            
             dataGridView2.Enabled = false;
+        }       
+        
+        //Xử lý biến cố của các control
+
+
+        private void ThongKe_Load(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            panel2.Visible = false;
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "yyyy";
+            dateTimePicker1.CustomFormat = "yyyy";
+            //dateTimePicker1.ShowUpDown = true;
+            //dateTimePicker1.ShowCheckBox = true;
+            //dateTimePicker2.ShowUpDown = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToAddRows = false;
+
+            for (int i = 1; i <= 12; i++)
+                ThangCombobox.Items.Add(i);
+            ThangCombobox.SelectedIndex = 0;
+
+            label9.Text = "";
+            label10.Text = "";
+        }
+        
+
+        private void XemButton_Click(object sender, EventArgs e)
+        {
+            DataTable table = ThongKeDoanhThu.LayDoanhThuThang((int)ThangCombobox.Items[ThangCombobox.SelectedIndex], (int)dateTimePicker1.Value.Year);
+            label10.Text = ((int)ThangCombobox.Items[ThangCombobox.SelectedIndex]).ToString() + " năm " + ((int)dateTimePicker1.Value.Year).ToString();
+            if (table.Rows.Count == 0)
+            {
+                label6.Visible = true;
+                clearDataGridView(dataGridView1);
+            }
+            else
+            {
+                label6.Visible = false;
+                setDoanhThuThangDataSource(table);
+            }            
         }
 
+        private void Xem2Button_Click(object sender, EventArgs e)
+        {
+            DataTable table = ThongKeDoanhThu.LayDoanhThuNam((int)dateTimePicker2.Value.Year);
+            label9.Text = dateTimePicker2.Value.Year.ToString();
+            if (table.Rows.Count == 0)
+            {
+                label4.Visible = true;
+                clearDataGridView(dataGridView2);
+            }
+            else
+            {
+                label4.Visible = false;
+                setDoanhThuNamDataSource(table);
+            }
+        }
+        //Xử lý hiển thị GUI
         private void XemButton_MouseHover(object sender, EventArgs e)
         {
             XemButton.BackColor = Color.White;
@@ -90,21 +137,6 @@ namespace Presentation
             XemButton.ForeColor = Color.White;
         }
         
-
-        private void XemButton_Click(object sender, EventArgs e)
-        {
-            DataTable table = ThongKeDoanhThu.LayDoanhThuThang((int)ThangCombobox.Items[ThangCombobox.SelectedIndex], (int)dateTimePicker1.Value.Year);
-            if (table.Rows.Count == 0)
-            {
-                label6.Visible = true;
-                clearDataGridView(dataGridView1);
-            }
-            else
-            {
-                label6.Visible = false;
-                setDoanhThuThangDataSource(table);
-            }            
-        }
 
         private void ThangButton_Click(object sender, EventArgs e)
         {
@@ -127,12 +159,7 @@ namespace Presentation
             panel2.Visible = true;
          
         }
-
-        private void Xem2Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void Xem2Button_MouseHover(object sender, EventArgs e)
         {
             Xem2Button.BackColor = Color.White;
@@ -144,7 +171,6 @@ namespace Presentation
             Xem2Button.BackColor = Color.Blue;
             Xem2Button.ForeColor = Color.White;
         }
-        
-        
+              
     }
 }

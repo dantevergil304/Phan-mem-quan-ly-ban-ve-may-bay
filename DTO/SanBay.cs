@@ -8,10 +8,10 @@ namespace DTO
 {
     public class SanBay
     {
-        public string MaSanBay { get; set; }
+        public int MaSanBay { get; set; }
         public string TenSanBay { get; set; }
 
-        public SanBay(string MaSanBay, string TenSanBay)
+        public SanBay(int MaSanBay, string TenSanBay)
         {
             this.MaSanBay = MaSanBay;
             this.TenSanBay = TenSanBay;

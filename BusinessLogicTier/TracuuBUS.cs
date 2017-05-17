@@ -14,15 +14,7 @@ namespace BusinessLogicTier
         public TracuuBUS()
         {
             tracuuDAO = new TracuuDAO();
-        }
-        public DataTable LayDanhSachSanBay()
-        {
-            return tracuuDAO.LayDanhSachSanBay();
-        }
-        public DataTable LayDanhSachSanBayDenTheoSanBayDi(string MaSanBayDi)
-        {
-            return tracuuDAO.LayDanhSachSanBayDenTheoSanBayDi(MaSanBayDi);
-        }        
+        }               
 
         public DataTable LayThongTinChuyenBayTheoTuyenBay(TuyenBay tuyenbay, DateTime date)
         {

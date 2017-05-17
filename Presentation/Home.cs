@@ -50,6 +50,12 @@ namespace Presentation
         {
             QuanLySanBayVaTuyenBay f = new QuanLySanBayVaTuyenBay();
             f.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ThayDoiQuyDinh f = new ThayDoiQuyDinh();
+            f.ShowDialog();
         }        
     }
 }

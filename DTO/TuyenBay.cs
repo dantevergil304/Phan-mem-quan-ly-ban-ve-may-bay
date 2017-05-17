@@ -8,12 +8,12 @@ namespace DTO
 {
     public class TuyenBay
     {
-        public string MaTuyenBay { get; set; }
-        public string MaSanBayDi { get; set; }
-        public string MaSanBayDen { get; set; }
+        public int MaTuyenBay { get; set; }
+        public int MaSanBayDi { get; set; }
+        public int MaSanBayDen { get; set; }
         
 
-        public TuyenBay( string MaSanBayDi = null , string MaSanBayDen = null, string MaTuyenBay = null)
+        public TuyenBay(int MaSanBayDi, int MaSanBayDen, int MaTuyenBay = 0 )
         {
             this.MaTuyenBay = MaTuyenBay;
             this.MaSanBayDi = MaSanBayDi;
