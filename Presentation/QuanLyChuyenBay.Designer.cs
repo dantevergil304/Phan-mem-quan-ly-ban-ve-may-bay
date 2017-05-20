@@ -82,6 +82,7 @@
             // CapNhapButton
             // 
             this.CapNhapButton.BackColor = System.Drawing.Color.Aquamarine;
+            this.CapNhapButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.CapNhapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CapNhapButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CapNhapButton.ForeColor = System.Drawing.Color.Blue;
@@ -100,6 +101,7 @@
             // XoaButton
             // 
             this.XoaButton.BackColor = System.Drawing.Color.Aquamarine;
+            this.XoaButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.XoaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XoaButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XoaButton.ForeColor = System.Drawing.Color.Blue;
@@ -109,7 +111,7 @@
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(113, 47);
             this.XoaButton.TabIndex = 1;
-            this.XoaButton.Text = "Xóa";
+            this.XoaButton.Text = "Hủy";
             this.XoaButton.UseVisualStyleBackColor = false;
             this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
             this.XoaButton.MouseLeave += new System.EventHandler(this.XoaButton_MouseLeave);
