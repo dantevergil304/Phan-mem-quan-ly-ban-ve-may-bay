@@ -20,7 +20,7 @@ namespace Presentation
             InitializeComponent();
             QuanlychuyenbayBUS = new QuanlychuyenbayBUS();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.ReadOnly = true;
+            dataGridView2.ReadOnly = true;            
         }
         private void clearDataGridView(DataGridView dgv)
         {
@@ -70,7 +70,7 @@ namespace Presentation
 
         private void QuanLyChuyenBay_Load(object sender, EventArgs e)
         {
-
+            ActiveControl = SearchTextBox;
             setDataSourceToThongTinChuyenBay(QuanlychuyenbayBUS.LayThongTinTatCaChuyenBay());
         }
 

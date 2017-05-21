@@ -1133,7 +1133,7 @@
             this.DatveButton.Name = "DatveButton";
             this.DatveButton.Size = new System.Drawing.Size(102, 35);
             this.DatveButton.TabIndex = 41;
-            this.DatveButton.Text = "Đặt vé";
+            this.DatveButton.Text = "Lưu";
             this.DatveButton.UseVisualStyleBackColor = false;
             this.DatveButton.Click += new System.EventHandler(this.DatveButton_Click);
             this.DatveButton.MouseLeave += new System.EventHandler(this.DatveButton_MouseLeave);

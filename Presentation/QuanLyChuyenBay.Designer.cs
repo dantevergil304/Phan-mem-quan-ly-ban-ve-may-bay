@@ -37,7 +37,7 @@
             this.ThemButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -156,13 +156,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm mã chuyến bay : ";
             // 
-            // textBox1
+            // SearchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.SearchTextBox.Location = new System.Drawing.Point(371, 96);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(207, 20);
+            this.SearchTextBox.TabIndex = 6;
+            this.SearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // SearchButton
             // 
@@ -183,9 +183,9 @@
             this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.label3.Location = new System.Drawing.Point(173, 416);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 29);
+            this.label3.Size = new System.Drawing.Size(287, 29);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Chi tiết chuyến bay";
+            this.label3.Text = "Chi tiết sân bay trung gian";
             // 
             // QuanLyChuyenBay
             // 
@@ -195,7 +195,7 @@
             this.ClientSize = new System.Drawing.Size(984, 608);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
@@ -222,7 +222,7 @@
         private System.Windows.Forms.Button ThemButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
         protected System.Windows.Forms.Label label3;
 

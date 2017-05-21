@@ -15,5 +15,7 @@ namespace DTO
         public int SoLuongGheHang1 { get; set; }
         public int SoLuongGheHang2 { get; set; }
 
+        public List<ChiTietChuyenBay> danhSachSanBayTrungGian;
+
     }
 }

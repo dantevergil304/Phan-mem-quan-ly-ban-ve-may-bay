@@ -71,9 +71,7 @@ namespace Presentation
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            panel2.Visible = false;
-
+            panel1.BringToFront();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "yyyy";
@@ -144,8 +142,7 @@ namespace Presentation
             ThangButton.ForeColor = Color.Black;
             NamButton.BackColor = Color.DeepSkyBlue;
             NamButton.ForeColor = Color.White;
-            panel1.Visible = true;
-            panel2.Visible = false;            
+            panel1.BringToFront();
 
         }
 
@@ -155,8 +152,7 @@ namespace Presentation
             ThangButton.ForeColor = Color.White;
             NamButton.BackColor = Color.White;
             NamButton.ForeColor = Color.Black;
-            panel1.Visible = false;
-            panel2.Visible = true;
+            panel2.BringToFront();
          
         }
        

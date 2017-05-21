@@ -43,6 +43,8 @@ namespace Presentation
             MaTBtextBox.Text = ((int)dataGridView2.Rows[0].Cells[1].Value).ToString();
             flag = -1;
             flag2 = -1;
+            dataGridView1.ReadOnly = true;
+            dataGridView2.ReadOnly = true;
         }
 
         private void clearDataGridView(DataGridView dgv)
@@ -55,8 +57,7 @@ namespace Presentation
         }
 
         private void setSanBayDataSource()
-        {
-            dataGridView1.ReadOnly = false;
+        {            
             clearDataGridView(dataGridView1);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
@@ -70,13 +71,11 @@ namespace Presentation
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
-            }
-            dataGridView1.ReadOnly = true;
+            }            
         }
 
         private void setTuyenBayDataSource()
-        {
-            dataGridView2.ReadOnly = false;
+        {            
             clearDataGridView(dataGridView2);
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = "STT";
@@ -91,8 +90,7 @@ namespace Presentation
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 dataGridView2.Rows[i].Cells[0].Value = i + 1;
-            }
-            dataGridView2.ReadOnly = true;
+            }            
         }
 
         private bool KiemTraTinhHopLeCuaInput(string pattern, string input)
@@ -112,21 +110,22 @@ namespace Presentation
                 label10.Visible = false;
                 check = false;
             }
-            if (string.IsNullOrWhiteSpace(TenSBtextBox.Text))
-            {
-                label8.Visible = true;
-                label11.Visible = false;
-                check = false;
-            }
 
-            if (!KiemTraTinhHopLeCuaInput(@"[A-Z0-9]", MaSBtextBox.Text))
+            else if (!KiemTraTinhHopLeCuaInput(@"[A-Z0-9]", MaSBtextBox.Text))
             {
                 label25.Visible = false;
                 label10.Visible = true;
                 check = false;
             }
 
-            if (!KiemTraTinhHopLeCuaInput(@"[A-ZÁÀẠÃẢÂẤẦẨẪẬĂẮẰẲẴẶƯỨỪỬỮỰÉÈẸẺẼÚÙỤỦŨÍÌỊĨỈÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÊẾỀỆỂỄĐ\s]", TenSBtextBox.Text))
+            if (string.IsNullOrWhiteSpace(TenSBtextBox.Text))
+            {
+                label8.Visible = true;
+                label11.Visible = false;
+                check = false;
+            }
+           
+            else if (!KiemTraTinhHopLeCuaInput(@"^[A-ZÁÀẠÃẢÂẤẦẨẪẬĂẮẰẲẴẶƯỨỪỬỮỰÉÈẸẺẼÚÙỤỦŨÍÌỊĨỈÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÊẾỀỆỂỄĐ\s]*$", TenSBtextBox.Text))
             {
                 label11.Visible = false;
                 label8.Visible = true;
@@ -145,7 +144,7 @@ namespace Presentation
                 label9.Visible = true;
                 check = false; ;
             }
-            if (!KiemTraTinhHopLeCuaInput(@"[A-Z0-9]", MaTBtextBox.Text))
+            else if (!KiemTraTinhHopLeCuaInput("^[A-Z0-9]*$", MaTBtextBox.Text))
             {
                 label12.Visible = true;
                 label9.Visible = false;
@@ -247,7 +246,7 @@ namespace Presentation
         private void SBThemButton_Click(object sender, EventArgs e)
         {
             panel3.Visible = true;
-            MaSBtextBox.ReadOnly = false;
+            MaSBtextBox.ReadOnly = false;            
             SBControlReset();
             flag = 0;  
         }
@@ -322,6 +321,24 @@ namespace Presentation
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             MaTBtextBox.Text = ((int)dataGridView2.Rows[e.RowIndex].Cells[1].Value).ToString();     
+        }
+
+        private void MaSBtextBox_TextChanged(object sender, EventArgs e)
+        {
+            label25.Visible = false;
+            label10.Visible = false;
+        }
+
+        private void TenSBtextBox_TextChanged(object sender, EventArgs e)
+        {
+            label8.Visible = false;
+            label11.Visible = false;
+        }
+
+        private void MaTBtextBox_TextChanged(object sender, EventArgs e)
+        {
+            label12.Visible = false;
+            label9.Visible = false;
         }              
     }
 }

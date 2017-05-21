@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietChuyenBay.cs" />
+    <Compile Include="ChiTietSanBayTrungGian.cs" />
     <Compile Include="HanhKhach.cs" />
     <Compile Include="PhieuDatCho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
